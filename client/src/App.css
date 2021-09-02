@@ -1,3 +1,19 @@
-.signup-form-div {
-  text-align: center;
+.login-form {
+  color: #f5f7dc;
+  margin-top: 20vh;
+}
+
+.signup-form {
+  color: #f5f7dc;
+
+  margin-top: 30vh;
+}
+
+.loungezilla-name {
+  color: #f5f7dc;
+  background-color: #0f0326;
+  width: 80vw;
+  height: 25vh;
+  font-size: 5rem;
+  margin-left: -30vw;
 }

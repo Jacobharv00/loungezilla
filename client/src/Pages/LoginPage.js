@@ -9,11 +9,20 @@ function LoginPage ( { onLogin } ) {
 
 
   return (
-    <main>
-      <LoginForm onLogin={onLogin} />
+    <>
+      <section className="loungezilla-name">
+        LOUNGEZILLA
+      </section>
       
-      <SignupForm onLogin={onLogin} />
+
       
+      <section className="login-form">
+        <LoginForm onLogin={onLogin} />
+      </section>
+
+      <section className="signup-form">
+        <SignupForm onLogin={onLogin} />
+      </section>
 
 
       {/* {showLogin ? ( <> <LoginForm onLogin={onLogin} /> <button onClick={setShowLogin(!showLogin )}></button> </> )
@@ -24,7 +33,7 @@ function LoginPage ( { onLogin } ) {
         )} */}
       
       
-    </main>
+    </>
   )
 }
 
