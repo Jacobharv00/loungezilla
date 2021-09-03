@@ -1,0 +1,45 @@
+.nav-bar {
+  display: flex;
+  height: 12vh;
+  background-color: #0f0326;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: -9px;
+  margin-left: -9px;
+  width: 100%;
+  box-shadow: 0 6px 10px -2px rgba(28, 28, 28, 0.9);
+}
+
+.app-name {
+  color: #f5f7dc;
+  padding: 15px;
+  font-size: 3rem;
+}
+
+.logout-btn {
+  border: none;
+  height: 35px;
+  width: 10vw;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  background-color: #e65f5c;
+  color: #f5f7dc;
+  cursor: pointer;
+}
+
+.nav-link-home-container {
+  margin-left: 68vw;
+}
+
+.nav-link-home {
+  display: flex;
+  cursor: pointer;
+  color: #f5f7dc;
+  height: 35px;
+  width: 10vw;
+  font-size: 1.5rem;
+  margin-top: -3vh;
+  padding: 40px;
+  margin-left: 4.5vw;
+}

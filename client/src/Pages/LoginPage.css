@@ -1,0 +1,12 @@
+.login-page {
+  /* background-color: #e65f5c; */
+  min-height: 100vh;
+  height: auto;
+  width: auto;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}

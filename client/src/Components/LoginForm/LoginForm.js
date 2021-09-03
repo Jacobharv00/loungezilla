@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import "./LoginForm.css";
 
 // prettier-ignore
 function LoginForm ( { onLogin } ) {
@@ -36,10 +37,11 @@ function LoginForm ( { onLogin } ) {
   // prettier-ignore
   return (
     <main>
-      <form onSubmit={handleSubmit}>
+      <form className="login-form" onSubmit={handleSubmit}>
         <section>
-          <label>Username</label>
+          <label className="username-label">Username</label>
           <input
+            className="username-input"
             type="text"
             id="login-username"
             autoComplete="off"
@@ -48,8 +50,9 @@ function LoginForm ( { onLogin } ) {
           />
         </section>
         <section>
-          <label>Password</label>
+          <label className="password-label">Password</label>
           <input
+            className="password-input"
             type="password"
             id="login-password"
             autoComplete="off"
@@ -58,9 +61,9 @@ function LoginForm ( { onLogin } ) {
           />
         </section>
         <section>
-          <button>Login</button>
+          <button className="login-btn">Login</button>
         </section>
-        <section>
+        <section className="login-errors">
           {errors ? ( <div>
             {errors.map((err) => (
               <div key={err}>{err}</div>))}</div>

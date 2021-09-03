@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./SignupForm.css";
 
 // prettier-ignore
 function SignupForm ({onLogin, showLogin, setShowLogin}) {
@@ -9,9 +10,9 @@ function SignupForm ({onLogin, showLogin, setShowLogin}) {
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [errors, setErrors] = useState([]);
 
-  function handleExitSignUpForm() {
-    setShowLogin(!showLogin);
-  }
+  // function handleExitSignUpForm() {
+  //   setShowLogin(!showLogin);
+  // }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -40,7 +41,7 @@ function SignupForm ({onLogin, showLogin, setShowLogin}) {
   // prettier-ignore
   return (
     <main>
-      <button onClick={handleExitSignUpForm}>X</button>
+      {/* <button onClick={handleExitSignUpForm}>X</button> */}
       <form onSubmit={handleSubmit}>
         
         <section>
