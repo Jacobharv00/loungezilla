@@ -24,7 +24,7 @@ function AddCommentForm ( { user, movieId} ) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(newComment),
-    }).then(setCommentResults([ ...commentResults, newComment]))
+    }).then(setCommentResults([ ...commentResults, newComment], setComment('')))
   }
 
   return (
