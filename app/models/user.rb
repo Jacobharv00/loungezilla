@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :user_collections, dependent: :destroy
   has_many :collections, through: :user_collections
 
+  has_many :comments, dependent: :destroy
 
 
 end

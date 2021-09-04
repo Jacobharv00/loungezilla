@@ -1,0 +1,31 @@
+.comment-form-div {
+  height: 30vh;
+  width: 40vw;
+  background-color: #0f0326;
+  margin-left: 30vw;
+  border-radius: 7px;
+}
+
+.comment-input {
+  background-color: transparent;
+  color: #f5f7dc;
+  font-size: 1.5rem;
+  border: none;
+  border-bottom: 2px solid #e65f5c;
+  width: 60%;
+  margin-left: 6vw;
+  padding-top: 12vh;
+}
+
+.add-comment-btn {
+  color: #f5f7dc;
+  background-color: #0f0326;
+  cursor: pointer;
+  border-radius: 7px;
+  padding: 5px;
+  font-size: 1.2rem;
+}
+
+.comment-errors {
+  color: orange;
+}

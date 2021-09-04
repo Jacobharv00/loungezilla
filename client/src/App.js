@@ -28,7 +28,7 @@ function App() {
         <div className="app">
           <Switch>
             <Route path="/" exact>
-              <HomePage/>
+            <HomePage user={user}/>
             </Route>
             {/* <Route path="/CollectionsPage" exact>
               <CollectionsPage/>

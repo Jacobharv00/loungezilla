@@ -17,9 +17,10 @@
 .row_poster {
   object-fit: contain;
   width: 100%;
-  max-height: 100px;
+  max-height: 150px;
   transition: transform 450ms;
-  margin-right: 10px;
+  margin-right: 12px;
+  border-radius: 4px;
 }
 
 .row_poster:hover {
@@ -27,9 +28,14 @@
 }
 
 .row_posterLarge {
-  max-height: 250px;
+  max-height: 300px;
+  border-radius: 4px;
 }
 
 .row_posterLarge:hover {
   transform: scale(1.09);
+}
+
+.comment-btn {
+  max-height: 50px;
 }
