@@ -26,10 +26,7 @@
   background-color: #e65f5c;
   color: #f5f7dc;
   cursor: pointer;
-}
-
-.nav-link-home-container {
-  margin-left: 68vw;
+  margin-right: 1rem;
 }
 
 .nav-link-home {
@@ -39,7 +36,24 @@
   height: 35px;
   width: 10vw;
   font-size: 1.5rem;
-  margin-top: -3vh;
-  padding: 40px;
-  margin-left: 4.5vw;
+  padding-left: 58rem;
+  margin-right: -60px;
+}
+
+.nav-link-collections {
+  cursor: pointer;
+  color: #f5f7dc;
+  height: 35px;
+  width: 10vw;
+  font-size: 1.5rem;
+}
+
+.nav-link-comments {
+  display: flex;
+  cursor: pointer;
+  color: #f5f7dc;
+  height: 35px;
+  width: 10vw;
+  font-size: 1.5rem;
+  margin-left: 1rem;
 }

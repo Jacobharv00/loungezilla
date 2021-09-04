@@ -4,6 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import LoginPage from "./Pages/LoginPage";
 import Navbar from "./Components/NavBar/Navbar";
 import HomePage from "./Pages/HomePage";
+import CollectionsPage from "./Pages/CollectionsPage";
 
 // prettier-ignore
 function App() {
@@ -23,17 +24,17 @@ function App() {
 
   return (
       <>  
-      <Navbar setUser={setUser} user={user} />
+      <Navbar setUser={setUser} />
       <br></br>
         <div className="app">
           <Switch>
             <Route path="/" exact>
             <HomePage user={user}/>
             </Route>
-            {/* <Route path="/CollectionsPage" exact>
+            <Route path="/CollectionsPage" exact>
               <CollectionsPage/>
-            </Route> */}
-          </Switch>
+          </Route>
+        </Switch>
         </div>
       </>
   );

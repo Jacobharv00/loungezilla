@@ -18,7 +18,8 @@ function HomePage ({user}) {
       <Row user={ user } title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
       <Row user={ user } title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
       <Row user={ user } title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
-      <Row user={ user } title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
+      <Row user={user} title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
+      
     </div>
   );
 }

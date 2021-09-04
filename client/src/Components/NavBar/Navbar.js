@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 // prettier-ignore
-function Navbar ( {user, setUser} ) {
+function Navbar ( {setUser} ) {
   
   function handleLogoutClick() {
     fetch("/logout", {
@@ -17,14 +17,9 @@ function Navbar ( {user, setUser} ) {
   return (
     <nav className="nav-bar">
       <h1 className="app-name">LOUNGEZILLA</h1>
-
-      <div className="nav-link-home-container">
-        <NavLink className="nav-link-home" to="/">Home</NavLink>
-        <button className="logout-btn" onClick={handleLogoutClick}>Log Out</button>
-      </div>
-      {/* <NavLink className="navLink-collections" to="/collections">Collections</NavLink> */}
-
-      
+      <NavLink className="nav-link-home" to="/">Home</NavLink>
+      <NavLink className="nav-link-collections" to="/CollectionsPage">Collections</NavLink>
+      <button className="logout-btn" onClick={handleLogoutClick}>Log Out</button>
     </nav>
   )
 }

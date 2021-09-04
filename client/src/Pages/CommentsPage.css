@@ -1,0 +1,21 @@
+.styled {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.styled li {
+  padding-left: 1rem;
+  text-indent: 0.5rem;
+  padding: 10px;
+  letter-spacing: 2px;
+  object-fit: contain;
+}
+
+.styled li::before {
+  content: " 🎥  ";
+}
+
+.comment-container {
+  max-height: 155px;
+}

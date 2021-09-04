@@ -9,7 +9,8 @@ const base_url = "https://image.tmdb.org/t/p/original/";
 function Row ( { title, fetchUrl, isLargeRow, user } ) {
   const [ movies, setMovies ] = useState( [] )
   const [ addComment, setAddComment ] = useState( false )
-  const [ movieId, setMovieId ] = useState(null)
+  const [ movieId, setMovieId ] = useState( null )
+  
 
   // console.log('ROW COMPONENT', movies)
 
@@ -28,8 +29,6 @@ function Row ( { title, fetchUrl, isLargeRow, user } ) {
     setAddComment(!addComment)
   }
 
-
-  
 // prettier-ignore
   return (
     <div className="row">
@@ -42,17 +41,15 @@ function Row ( { title, fetchUrl, isLargeRow, user } ) {
               id={movie.id}
               className={`row_poster ${ isLargeRow && "row_posterLarge" }`}
               src={`${ base_url }${ isLargeRow ? movie.poster_path : movie.backdrop_path }`}
-              alt={movie.name}
-            />
+              alt={movie.name}/>
           </React.Fragment>
         ))}
-        </div> 
-      
-      {addComment ? <div> <AddCommentForm movies={movies} user={user} movieId={movieId}/> </div> : null}
+        
+      </div>
+      {addComment ? <AddCommentForm movies={movies} user={user} movieId={movieId} />  : null}
 
     </div>
-  )
-        
-}
+    )
+  }
 
 export default Row;

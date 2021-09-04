@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./CommentForm.css";
+import CommentsPage from "../../Pages/CommentsPage";
 
 // prettier-ignore
 function AddCommentForm ( { user, movieId} ) {
   const [comment, setComment] = useState("");
   const [ errors, setErrors ] = useState( [] );
-  const [ commentResults, setCommentResults ] = useState([]);
+  const [ commentResults, setCommentResults ] = useState( [] );
+  const [showComments, setShowComments ] = useState( false );
   
-
   const newComment = {
     user_id: user.id,
     comment: comment,
@@ -26,25 +27,17 @@ function AddCommentForm ( { user, movieId} ) {
     } ).then( setCommentResults( [ ...commentResults, newComment ] ) );
   }
 
-
-
-
-
-
-
-
-  const displayComments = commentResults.map( (comment, index) => {
-    return (
-      <article key={index}>
-        <p>{comment.comment}</p>
-      </article>
-    )
-  })
+// const displayComments = commentResults.map( (comment, index) => {
+//     return (
+//       <article key={index}>
+//         <p>{comment.comment}</p>
+//       </article>
+//     )
+//   })
 
 
   return (
     <div className="comment-form-div">
-      {displayComments}
       <form onSubmit={handleAddComment}>
         <input
           className="comment-input"
@@ -53,14 +46,10 @@ function AddCommentForm ( { user, movieId} ) {
           value={comment}
           onChange={(e) => setComment(e.target.value)}
         />
-
-        
-
         <button className="add-comment-btn" type="submit">
           Submit
         </button>
       </form> 
-
       <div>
         {errors.map((err) => (
           <div className="comment-errors" key={err}>
@@ -68,10 +57,8 @@ function AddCommentForm ( { user, movieId} ) {
           </div>
         ))}
       </div>
-
-    
-
-    
+      <button onClick={() => setShowComments(!showComments)}>Show Comments</button>
+      {showComments ? <CommentsPage /> : null}
     </div>
   );
 }
