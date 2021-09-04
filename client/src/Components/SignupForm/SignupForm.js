@@ -42,11 +42,12 @@ function SignupForm ({onLogin, showLogin, setShowLogin}) {
   return (
     <main>
       {/* <button onClick={handleExitSignUpForm}>X</button> */}
-      <form onSubmit={handleSubmit}>
+      <form className="signup-form" onSubmit={handleSubmit}>
         
         <section>
-          <label>Name</label>
+          <label className="name-label">Name</label>
           <input
+            className="name-input"
             type="text"
             id="name"
             autoComplete="off"
@@ -56,8 +57,9 @@ function SignupForm ({onLogin, showLogin, setShowLogin}) {
         </section>
 
         <section>
-          <label>Username</label>
+          <label className="username-label">Username</label>
           <input
+            className="username-input"
             type="text"
             id="signup-username"
             autoComplete="off"
@@ -67,8 +69,9 @@ function SignupForm ({onLogin, showLogin, setShowLogin}) {
         </section>
 
         <section>
-          <label>Avatar(User Photo)</label>
+          <label className="avatar-label">Avatar(User Photo)</label>
           <input
+            className="avatar-input"
             type="text"
             id="signup-avatar"
             autoComplete="off"
@@ -78,8 +81,9 @@ function SignupForm ({onLogin, showLogin, setShowLogin}) {
         </section>
 
         <section>
-          <label>Password</label>
+          <label className="password-label">Password</label>
           <input
+            className="password-input"
             type="password"
             id="signup-password"
             autoComplete="off"
@@ -89,8 +93,9 @@ function SignupForm ({onLogin, showLogin, setShowLogin}) {
         </section>
 
         <section>
-          <label>Password Confirmation</label>
+          <label className="password-confirmation-label">Password Confirmation</label>
           <input
+            className="password-confirmation-input"
             type="password"
             id="signup-password-confirmation"
             autoComplete="off"
@@ -100,10 +105,10 @@ function SignupForm ({onLogin, showLogin, setShowLogin}) {
         </section>
 
         <section>
-          <button type="submit">Sign Up</button>
+          <button className="signup-btn" type="submit">Sign Up</button>
         </section>
 
-        <section>
+        <section className="signup-errors">
           {errors.map( err => ( <div key={err}> {err} </div> ))}
         </section>
       

@@ -1,12 +1,38 @@
 .login-page {
-  /* background-color: #e65f5c; */
   min-height: 100vh;
   height: auto;
   width: auto;
 }
 
-input:focus,
-textarea:focus,
-select:focus {
-  outline: none;
+.header {
+  padding: 15px;
+  color: #f5f7dc;
+  font-size: 3rem;
+  background-color: #0f0326;
+  width: 100%;
+  height: 15vh;
+  margin-top: -9px;
+  margin-left: -9px;
+}
+
+.signup-button {
+  border: none;
+  height: 35px;
+  width: 75%;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  color: #f5f7dc;
+  background: none;
+}
+
+.login-button {
+  border: none;
+  height: 35px;
+  width: 75%;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  color: #f5f7dc;
+  background: none;
 }
