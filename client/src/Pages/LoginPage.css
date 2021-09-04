@@ -36,3 +36,37 @@
   color: #f5f7dc;
   background: none;
 }
+
+.movie-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.movie-background {
+  background-color: #0f0326;
+  min-height: 350px;
+  min-width: 275px;
+  box-shadow: 0 6px 10px -2px rgba(28, 28, 28, 0.9);
+  margin-top: 100px;
+  padding: 20px;
+  border-radius: 35px;
+  margin-left: 15px;
+}
+
+.movie-img {
+  max-height: 355px;
+  margin-top: 30px;
+  margin-left: 45px;
+  border-radius: 40px;
+  padding-top: 2px;
+  box-shadow: 0 25px 100px -3px #e65f5c;
+}
+
+.movie-title {
+  font-size: 1rem;
+  color: #f5f7dc;
+  text-align: center;
+  font-size: 1.5rem;
+}
