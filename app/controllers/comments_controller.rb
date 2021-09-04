@@ -8,14 +8,9 @@ class CommentsController < ApplicationController
     render json: comments
   end
 
-  # def show
-  #   comment = Comment.where(movie_db_id: params[:id])
-  #   render json: comment
-  # end
-
   def show
-    comment = Comment.find(params[:id])
-    render json: comment
+    comments = Comment.where(movie_db_id: params[:id])
+    render json: comments
   end
 
   def create
@@ -33,13 +28,3 @@ class CommentsController < ApplicationController
 
 end
 
-
-    # def show
-    #     comment = Comment.where(event_id: params[:id])
-    #     render json: comment, status: :ok
-    # end
-
-    # def create
-    #     comment = Comment.create!(comment_params)
-    #     render json: comment, status: :created
-    # end

@@ -1,17 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./CommentsPage.css";
 
 // prettier-ignore
-function CommentsPage () {
-  const [allComments, setAllComments] = useState([])
+function CommentsPage ({movieId}) {
+  const [ allComments, setAllComments ] = useState( [] )
   
+  // console.log('COMMENTS PAGE', movieId)
+
+
   useEffect(() => {
-    fetch( '/comments' )
+    fetch( `/comments/${movieId}` )
       .then( resp => resp.json() )
     .then(data => setAllComments(data))
-  }, [] )
+  }, [movieId] )
   
-  console.log( allComments )
   
   const displayComments = allComments.map( comment => {
     return (

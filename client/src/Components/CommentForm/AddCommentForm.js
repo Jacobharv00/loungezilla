@@ -18,23 +18,14 @@ function AddCommentForm ( { user, movieId} ) {
   function handleAddComment(e) {
     e.preventDefault();
     setErrors([]);
-    fetch("/comments", {
+    fetch(`/comments`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(newComment),
-    } ).then( setCommentResults( [ ...commentResults, newComment ] ) );
+    }).then(setCommentResults([ ...commentResults, newComment]))
   }
-
-// const displayComments = commentResults.map( (comment, index) => {
-//     return (
-//       <article key={index}>
-//         <p>{comment.comment}</p>
-//       </article>
-//     )
-//   })
-
 
   return (
     <div className="comment-form-div">
@@ -58,7 +49,7 @@ function AddCommentForm ( { user, movieId} ) {
         ))}
       </div>
       <button onClick={() => setShowComments(!showComments)}>Show Comments</button>
-      {showComments ? <CommentsPage /> : null}
+      {showComments ? <CommentsPage movieId={movieId}/> : null}
     </div>
   );
 }

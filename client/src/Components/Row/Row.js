@@ -25,7 +25,8 @@ function Row ( { title, fetchUrl, isLargeRow, user } ) {
 
   function handleClick ( e ) {
     e.stopPropagation()
-    setMovieId(e.target.nextSibling.id)
+    // setMovieId(e.target.nextSibling.id)
+    setMovieId(e.target.id)
     setAddComment(!addComment)
   }
 
@@ -36,8 +37,9 @@ function Row ( { title, fetchUrl, isLargeRow, user } ) {
       <div className="row_posters">
         {movies.map(movie => (
           <React.Fragment key={movie.id}>
-            <button onClick={handleClick} className="comment-btn">{!addComment ? 'Add Comment' : 'X'}</button>
+            {/* <button onClick={handleClick} className="comment-btn">{!addComment ? 'Add Comment' : 'X'}</button> */}
             <img
+              onClick={handleClick}
               id={movie.id}
               className={`row_poster ${ isLargeRow && "row_posterLarge" }`}
               src={`${ base_url }${ isLargeRow ? movie.poster_path : movie.backdrop_path }`}
@@ -46,7 +48,9 @@ function Row ( { title, fetchUrl, isLargeRow, user } ) {
         ))}
         
       </div>
-      {addComment ? <AddCommentForm movies={movies} user={user} movieId={movieId} />  : null}
+      
+
+      {addComment ? <AddCommentForm movies={movies} user={user} movieId={movieId} /> : null}
 
     </div>
     )
