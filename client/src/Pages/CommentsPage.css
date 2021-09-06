@@ -4,18 +4,40 @@
   margin: 0;
 }
 
-.styled li {
+.styled-ul li {
   padding-left: 1rem;
   text-indent: 0.5rem;
-  padding: 10px;
+  padding: 5px;
   letter-spacing: 2px;
   object-fit: contain;
+  list-style-type: none;
 }
 
-.styled li::before {
+.styled-ul li::before {
   content: " 🎥  ";
+  padding: 10px;
+}
+
+.comment-container::-webkit-scrollbar {
+  display: none;
+}
+
+.styled-li {
+  margin-left: -10px;
+  font-size: 1.2rem;
 }
 
 .comment-container {
   max-height: 155px;
+  width: 75%;
+  overflow-y: auto;
+}
+
+.add-comment-btn {
+  color: #f5f7dc;
+  background-color: #0f0326;
+  cursor: pointer;
+  border-radius: 7px;
+  padding: 5px;
+  font-size: 1.2rem;
 }

@@ -1,8 +1,8 @@
 .comment-form-div {
-  height: 30vh;
-  width: 40vw;
+  height: 32vh;
+  width: 60vw;
   background-color: #0f0326;
-  margin-left: 30vw;
+  margin-left: 22vw;
   border-radius: 7px;
 }
 
@@ -28,4 +28,13 @@
 
 .comment-errors {
   color: orange;
+}
+
+.show-comments-btn {
+  color: #f5f7dc;
+  background-color: #0f0326;
+  cursor: pointer;
+  border-radius: 7px;
+  padding: 5px;
+  font-size: 1.2rem;
 }

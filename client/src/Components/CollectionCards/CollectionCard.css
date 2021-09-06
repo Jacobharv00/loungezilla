@@ -1,0 +1,22 @@
+.collection-card {
+  margin-left: 20px;
+  color: #f5f7dc;
+}
+
+.collection-title {
+  padding: 15px;
+  margin-bottom: 50px;
+}
+
+.collection-img {
+  object-fit: contain;
+  width: 100%;
+  max-height: 150px;
+  transition: transform 450ms;
+  margin-right: 12px;
+  border-radius: 4px;
+}
+
+.collection-img:hover {
+  transform: scale(1.08);
+}

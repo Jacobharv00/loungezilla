@@ -48,7 +48,7 @@ function AddCommentForm ( { user, movieId} ) {
           </div>
         ))}
       </div>
-      <button onClick={() => setShowComments(!showComments)}>Show Comments</button>
+      <button className="show-comments-btn" onClick={() => setShowComments(!showComments)}>Show Comments</button>
       {showComments ? <CommentsPage movieId={movieId}/> : null}
     </div>
   );

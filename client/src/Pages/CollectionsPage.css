@@ -1,0 +1,15 @@
+.display-collections-container {
+  overflow-y: hidden;
+  overflow-x: scroll;
+  padding: 20px;
+}
+
+.display-collections-container::-webkit-scrollbar {
+  display: none;
+}
+
+.display-title-mouseOver {
+  margin-top: 10px;
+  margin-left: 20px;
+  color: blue;
+}

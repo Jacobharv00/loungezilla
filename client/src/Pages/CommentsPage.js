@@ -17,9 +17,8 @@ function CommentsPage ({movieId}) {
   
   const displayComments = allComments.map( comment => {
     return (
-      <ul className="styled" key={comment.id}>
-        <li >{comment.comment}</li>
-        
+      <ul className="styled-ul" key={comment.id}>
+        <li className="styled-li">{comment.comment}</li>
       </ul>
     )
   })
