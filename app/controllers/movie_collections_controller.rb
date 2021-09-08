@@ -8,7 +8,6 @@ class MovieCollectionsController < ApplicationController
   end
 
   def create
-    # byebug 
     movie_collection = MovieCollection.create!(movie_collection_params)
     render json: movie_collection, status: :created
   end

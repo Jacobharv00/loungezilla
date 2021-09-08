@@ -11,19 +11,22 @@ gracie = User.create(name: 'gracie', username: 'gracie1', user_photo: '5678', pa
 puts "Done seeding User!"
 
 puts "Seeding A Collection..."
-collection1 = Collection.create(title: 'Comedys')
-collection2 = Collection.create(title: 'Rom Coms')
-collection3 = Collection.create(title: 'Documentaries')
-collection4 = Collection.create(title: 'Action Movies')
-
+originals = Collection.create(title: 'Originals')
+trending = Collection.create(title: 'Trending')
+topRated = Collection.create(title: 'Top Rated')
+actionMovies = Collection.create(title: 'Action Movies')
+comedys = Collection.create(title: 'Comedys')
+horrors = Collection.create(title: 'Horrors')
+romance = Collection.create(title: 'Romance')
+documentaries = Collection.create(title: 'Documentaries')
 puts "Done Seeding Collection!"
 
 
 puts "Seeding A UserCollection..."
-jacobsCollection1 = UserCollection.create(user_id: jacob.id, collection_id: collection1.id)
-jacobsCollection2 = UserCollection.create(user_id: jacob.id, collection_id: collection2.id)
-jacobsCollection3 = UserCollection.create(user_id: jacob.id, collection_id: collection3.id)
-jacobsCollection4 = UserCollection.create(user_id: jacob.id, collection_id: collection4.id)
+jacobsCollection1 = UserCollection.create(user_id: jacob.id, collection_id: comedys.id)
+jacobsCollection2 = UserCollection.create(user_id: jacob.id, collection_id: romance.id)
+jacobsCollection3 = UserCollection.create(user_id: gracie.id, collection_id: documentaries.id)
+jacobsCollection4 = UserCollection.create(user_id: gracie.id, collection_id: actionMovies.id)
 
 puts "Done Seeding A User Collection!"
 

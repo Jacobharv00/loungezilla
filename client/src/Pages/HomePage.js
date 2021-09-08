@@ -19,22 +19,27 @@ function HomePage ( { user } ) {
     return collection.id
   })
 
-  const comedyCollectionId = collectionIds[0]
-  const romComCollectionId = collectionIds[1]
-  const documentaryId = collectionIds[2]
+  const originalsId = collectionIds[0]
+  const trendingId = collectionIds[1]
+  const topRatedId = collectionIds[2]
   const actionMoviesId = collectionIds[3]
+  const comedyId = collectionIds[4];
+  const horrorsId = collectionIds[5];
+  const romanceId = collectionIds[6];
+  const documentaryId = collectionIds[7];
+
 
   // prettier-ignore
   return (
     <div className="homepage">
       <Banner />
-      <Row user={user} title="ORIGINALS" fetchUrl={requests.fetchNetflixOriginals} isLargeRow/>
-      <Row user ={user} title="TRENDING" fetchUrl={requests.fetchTrending} />
-      <Row user ={user} title="Top Rated" fetchUrl={requests.fetchTopRated} />
+      <Row user={user} title="ORIGINALS" id={originalsId} fetchUrl={requests.fetchNetflixOriginals} isLargeRow/>
+      <Row user={user} title="TRENDING" id={trendingId} fetchUrl={requests.fetchTrending} />
+      <Row user={user} title="Top Rated" id={topRatedId} fetchUrl={requests.fetchTopRated} />
       <Row user={user} title="Action Movies" id={actionMoviesId} fetchUrl={requests.fetchActionMovies} />
-      <Row user={user} title="Comedy Movies" id={comedyCollectionId} fetchUrl={requests.fetchComedyMovies} />
-      <Row user={user} title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
-      <Row user={user} title="Romance Movies" id={romComCollectionId} fetchUrl={requests.fetchRomanceMovies} />
+      <Row user={user} title="Comedy Movies" id={comedyId} fetchUrl={requests.fetchComedyMovies} />
+      <Row user={user} title="Horror Movies" id={horrorsId} fetchUrl={requests.fetchHorrorMovies} />
+      <Row user={user} title="Romance Movies" id={romanceId} fetchUrl={requests.fetchRomanceMovies} />
       <Row user={user} title="Documentaries" id={documentaryId} fetchUrl={requests.fetchDocumentaries} />
     </div>
   );
