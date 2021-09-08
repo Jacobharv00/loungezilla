@@ -11,10 +11,10 @@ gracie = User.create(name: 'gracie', username: 'gracie1', user_photo: '5678', pa
 puts "Done seeding User!"
 
 puts "Seeding A Collection..."
-collection1 = Collection.create(title: 'Jacobs Comedys')
-collection2 = Collection.create(title: 'Jacobs Rom Coms')
-collection3 = Collection.create(title: 'Jacobs Documentaries')
-collection4 = Collection.create(title: 'Jacobs Action Movies')
+collection1 = Collection.create(title: 'Comedys')
+collection2 = Collection.create(title: 'Rom Coms')
+collection3 = Collection.create(title: 'Documentaries')
+collection4 = Collection.create(title: 'Action Movies')
 
 puts "Done Seeding Collection!"
 
@@ -28,10 +28,11 @@ jacobsCollection4 = UserCollection.create(user_id: jacob.id, collection_id: coll
 puts "Done Seeding A User Collection!"
 
 
-puts "Seeding MovieCollections..."
-movieCollection1 = MovieCollection.create(movie_db_id: 1, collection_id: collection1.id, movie_db_image: 'Testing!')
+# puts "Seeding MovieCollections..."
+# movieCollection1 = MovieCollection.create(movie_db_id: 1, collection_id: collection1.id, movie_db_image: 'Test 1')
+# MovieCollection2 = MovieCollection.create(movie_db_id: 2, collection_id: collection2.id, movie_db_image: 'Test 2')
 
-puts "Done Seeding MovieCollections!!!"
+# puts "Done Seeding MovieCollections!!!"
 
 
 puts "Seeding Comments"

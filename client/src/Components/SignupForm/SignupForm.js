@@ -41,7 +41,6 @@ function SignupForm ({onLogin, showLogin, setShowLogin}) {
   // prettier-ignore
   return (
     <main>
-      {/* <button onClick={handleExitSignUpForm}>X</button> */}
       <form className="signup-form" onSubmit={handleSubmit}>
         
         <section>

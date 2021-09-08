@@ -6,14 +6,12 @@ import AddCommentForm from "../CommentForm/AddCommentForm";
 const base_url = "https://image.tmdb.org/t/p/original/";
 
 // prettier-ignore
-function Row ( { title, fetchUrl, isLargeRow, user } ) {
+function Row ( { title, fetchUrl, isLargeRow, user, id} ) {
   const [ movies, setMovies ] = useState( [] )
   const [ addComment, setAddComment ] = useState( false )
   const [ movieId, setMovieId ] = useState( null )
-  const [displayTitle, setDisplayTitle] = useState(null)
-  
-  // console.log('ROW COMPONENT', movies)
-
+  const [ displayTitle, setDisplayTitle ] = useState( null )
+  // const [errors, setErrors] = useState([])
 
   useEffect(() => {
     async function fetchData () {
@@ -30,51 +28,63 @@ function Row ( { title, fetchUrl, isLargeRow, user } ) {
     setAddComment( !addComment )
   }
 
-  // const newMovieCollectionCard = {
-  //   movie_db_id: movieId,
-  //   collection_id: 'integer',
-  //   movie_db_image: 'string'
-  // }
+  function getMovieAttributes ( e ) {
+    const newMovieCollectionCard = {
+      movie_db_id: e.target.nextElementSibling.id,
+      collection_id: id,
+      movie_db_image: e.target.nextElementSibling.src,
+    }
+    addMovieToMovieCollections(newMovieCollectionCard)
+  }
 
-  // function handleAddMovieToMovieCollections () {
-  //   fetch( '/movie_collections', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify(newMovieCollectionCard)
-  //   })
-  // }
+
+
+  function addMovieToMovieCollections (newMovieCollectionCard) {
+    // console.log( newMovieCollectionCard )
+    // setErrors([])
+    fetch( '/movie_collections', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newMovieCollectionCard)
+    })
+  }
 
 // prettier-ignore
   return (
     <div className="row">
-      <h2>{title}</h2>
+      <h2 id={id}>{title}</h2>
       <div className="row_posters">
         {movies.map(movie => (
           <React.Fragment key={movie.id}>
-            {/* <button onSubmit={handleAddMovieToMovieCollections}>Add To Collections</button> */}
+            <button className="add-to-collections-btn" onClick={getMovieAttributes}>Add to Collections</button>
             <img
               onClick={handleClick}
               id={movie.id}
               className={`row_poster ${ isLargeRow && "row_posterLarge" }`}
-              src={`${ base_url }${ isLargeRow ? movie.poster_path : movie.backdrop_path}`}
+              src={`${ base_url }${ isLargeRow ? movie.poster_path : movie.backdrop_path }`}
               alt={movie.name}
               title={movie?.title}
-              onMouseOver={() => setDisplayTitle(movie?.title || movie?.name || movie?.original_name)}
-              onMouseLeave={() => setDisplayTitle(!displayTitle)}
+              onMouseEnter={() => setDisplayTitle(displayTitle)}
+              onMouseLeave={() => setDisplayTitle( !displayTitle )}
             />
           </React.Fragment>
-        ) )}
-        
-
+          ))}
       </div>
-      
-      {displayTitle ? <h1 className="display-title-mouseOver">{displayTitle}</h1> : null}
-
-      {addComment ? <AddCommentForm movies={movies} user={user} movieId={movieId} /> : null}
-    </div>
+        {addComment ? <AddCommentForm movies={movies} user={user} movieId={movieId} /> : null}
+      </div>
   )
 }
 
 export default Row;
+
+// {
+//   /* {errors.map((err) => (
+//           console.log( err )
+//         ))} */
+// }
+
+// {
+//   /* < div style = {{ color: "blue", fontSize: "300px" }} key={err}>{err}</div> */
+// }

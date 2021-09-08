@@ -24,7 +24,7 @@ function App() {
 
   return (
       <>  
-      <Navbar setUser={setUser} />
+      <Navbar user={user} setUser={setUser} />
       <br></br>
         <div className="app">
           <Switch>

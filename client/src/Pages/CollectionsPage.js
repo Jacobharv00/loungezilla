@@ -6,21 +6,19 @@ function CollectionsPage() {
   const [collections, setCollections] = useState([]);
 
   useEffect(() => {
-    fetch("/movie_collections")
+    fetch("/collections")
       .then((resp) => resp.json())
       .then((data) => setCollections(data));
   }, []);
 
   // console.log("Collections Page", collections);
 
-  const displayCollections = collections.map((movie) => {
+  const displayCollections = collections.map((collection) => {
     return (
       <CollectionCard
-        key={movie.id}
-        movieDbId={movie.movie_db_id}
-        collectionId={movie.collection.id}
-        title={movie.collection.title}
-        image={movie.movie_db_image}
+        key={collection.id}
+        title={collection.title}
+        movieCollection={collection.movie_collections}
       />
     );
   });

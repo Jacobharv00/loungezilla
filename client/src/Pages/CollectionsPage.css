@@ -7,9 +7,3 @@
 .display-collections-container::-webkit-scrollbar {
   display: none;
 }
-
-.display-title-mouseOver {
-  margin-top: 10px;
-  margin-left: 20px;
-  color: blue;
-}

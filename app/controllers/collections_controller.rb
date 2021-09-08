@@ -8,8 +8,4 @@ class CollectionsController < ApplicationController
   end
 
 
-
-
-
-
 end
