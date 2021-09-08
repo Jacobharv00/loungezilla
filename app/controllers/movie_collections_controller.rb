@@ -8,7 +8,11 @@ class MovieCollectionsController < ApplicationController
   end
 
   def create
+    # byebug
+    # add .new
     movie_collection = MovieCollection.create!(movie_collection_params)
+    # movie_collection.user_id = session.user_id
+    movie_collection.save!
     render json: movie_collection, status: :created
   end
 

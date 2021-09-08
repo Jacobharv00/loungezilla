@@ -16,6 +16,21 @@
   font-size: 3rem;
 }
 
+.nav-links {
+  display: flex;
+  list-style: none;
+  width: 50%;
+  height: 60%;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 100px;
+}
+
+.nav-li {
+  padding: 15px;
+}
+
 .logout-btn {
   border: none;
   height: 35px;
@@ -26,34 +41,29 @@
   background-color: #e65f5c;
   color: #f5f7dc;
   cursor: pointer;
-  margin-right: 1rem;
 }
 
 .nav-link-home {
   display: flex;
   cursor: pointer;
   color: #f5f7dc;
-  height: 35px;
-  width: 10vw;
-  font-size: 1.5rem;
-  padding-left: 58rem;
-  margin-right: -60px;
+  /* height: 35px;
+  width: 10vw; */
+  font-size: 2rem;
+  /* padding-left: 58rem;
+  margin-right: -60px; */
+  text-decoration: none;
 }
 
 .nav-link-collections {
   cursor: pointer;
   color: #f5f7dc;
-  height: 35px;
-  width: 10vw;
-  font-size: 1.5rem;
+  /* height: 35px;
+  width: 10vw; */
+  font-size: 2rem;
+  text-decoration: none;
 }
 
-.nav-link-comments {
-  display: flex;
+.avatar-photo-nav {
   cursor: pointer;
-  color: #f5f7dc;
-  height: 35px;
-  width: 10vw;
-  font-size: 1.5rem;
-  margin-left: 1rem;
 }

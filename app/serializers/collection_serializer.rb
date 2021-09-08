@@ -3,3 +3,6 @@ class CollectionSerializer < ActiveModel::Serializer
   has_many :movie_collections
   # has_many :users
 end
+
+# create custom method
+# access current session id??
