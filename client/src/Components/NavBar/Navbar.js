@@ -1,9 +1,11 @@
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
 import "./Navbar.css";
 import Avatar from "react-avatar";
 
 // prettier-ignore
-function Navbar ( {user, setUser} ) {
+function Navbar ( { user, setUser } ) {
+  const [showLogoutBtn, setShowLogoutBtn] = useState(false)
   
   function handleLogoutClick() {
     fetch("/logout", {
@@ -15,7 +17,9 @@ function Navbar ( {user, setUser} ) {
     });
   }
 
- // prettier-ignore
+
+
+// prettier-ignore
   return (
     <nav className="nav-bar">
       <h1 className="app-name">LOUNGEZILLA</h1>
@@ -27,17 +31,48 @@ function Navbar ( {user, setUser} ) {
           <NavLink className="nav-link-collections" to="/CollectionsPage">Collections</NavLink>
         </li>
         <li className="nav-li">
-          <button className="logout-btn" onClick={handleLogoutClick}>Log Out</button>
+          {/* {showLogoutBtn ? <button className="logout-btn" onClick={handleLogoutClick}>Log Out</button> : null} */}
         </li>
         <li className="nav-li">
-          <Avatar
-            round={5}
+          {/* <Avatar
+            onClick={() => setShowLogoutBtn(!showLogoutBtn)}
+            round='5px'
             size={70}
             className="avatar-photo-nav"
             name={user.name}
             color="#e65f5c"
             fgColor="#f5f7dc"
-          />
+          /> */}
+
+          <div class="dropdown">
+            
+            <div class="dropbtn">
+            <Avatar
+  onClick={() => setShowLogoutBtn(!showLogoutBtn)}
+  round="5px"
+  size={70}
+  className="avatar-photo-nav"
+  name={user.name}
+  color="#e65f5c"
+  fgColor="#f5f7dc"
+/>
+
+            </div>
+            <div class="dropdown-content">
+            <button className="logout-btn" onClick={handleLogoutClick}>
+  Log Out
+</button>
+
+            </div>
+          </div>;
+
+
+
+
+
+
+
+
         </li>
       </ul>
     </nav>
