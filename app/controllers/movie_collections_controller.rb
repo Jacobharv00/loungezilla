@@ -15,6 +15,12 @@ class MovieCollectionsController < ApplicationController
     render json: movie_collection, status: :created
   end
 
+  def destroy
+    movie = MovieCollection.find_by(movie_db_id: params[:id])
+    movie.destroy
+    head :no_content
+  end
+
   private
 
   def movie_collection_params

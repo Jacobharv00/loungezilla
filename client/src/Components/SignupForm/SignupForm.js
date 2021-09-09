@@ -1,48 +1,46 @@
-import React, { useState } from "react";
-import "./SignupForm.css";
+import React, { useState } from "react"
+import "./SignupForm.css"
 
-// prettier-ignore
-function SignupForm ({onLogin, showLogin, setShowLogin}) {
-  const [name, setName] = useState("");
-  const [username, setUsername] = useState("");
-  const [userPhoto, setUserPhoto] = useState("");
-  const [password, setPassword] = useState("");
-  const [passwordConfirmation, setPasswordConfirmation] = useState("");
-  const [errors, setErrors] = useState([]);
 
-  // function handleExitSignUpForm() {
-  //   setShowLogin(!showLogin);
-  // }
+function SignupForm ( { onLogin } ) {
+  const [ name, setName ] = useState( "" )
+  const [ username, setUsername ] = useState( "" )
+  const [ userPhoto, setUserPhoto ] = useState( "" )
+  const [ password, setPassword ] = useState( "" )
+  const [ passwordConfirmation, setPasswordConfirmation ] = useState( "" )
+  const [ errors, setErrors ] = useState( [] )
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    setErrors([]);
-    fetch("/signup", {
+
+
+  function handleSubmit ( e ) {
+    e.preventDefault()
+    setErrors( [] )
+    fetch( "/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
+      body: JSON.stringify( {
         name,
         username,
         user_photo: userPhoto,
         password,
         password_confirmation: passwordConfirmation,
-      }),
-    }).then((resp) => {
-      if (resp.ok) {
-        resp.json().then((user) => onLogin(user));
+      } ),
+    } ).then( ( resp ) => {
+      if ( resp.ok ) {
+        resp.json().then( ( user ) => onLogin( user ) )
       } else {
-        resp.json().then((err) => setErrors(err.errors));
+        resp.json().then( ( err ) => setErrors( err.errors ) )
       }
-    });
+    } )
   }
 
   // prettier-ignore
   return (
     <main>
-      <form className="signup-form" onSubmit={handleSubmit}>
-        
+      <form className="signup-form" onSubmit={ handleSubmit }>
+
         <section>
           <label className="name-label">Name</label>
           <input
@@ -50,8 +48,8 @@ function SignupForm ({onLogin, showLogin, setShowLogin}) {
             type="text"
             id="name"
             autoComplete="off"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            value={ name }
+            onChange={ ( e ) => setName( e.target.value ) }
           />
         </section>
 
@@ -62,8 +60,8 @@ function SignupForm ({onLogin, showLogin, setShowLogin}) {
             type="text"
             id="signup-username"
             autoComplete="off"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={ username }
+            onChange={ ( e ) => setUsername( e.target.value ) }
           />
         </section>
 
@@ -74,8 +72,8 @@ function SignupForm ({onLogin, showLogin, setShowLogin}) {
             type="text"
             id="signup-avatar"
             autoComplete="off"
-            value={userPhoto}
-            onChange={(e) => setUserPhoto(e.target.value)}
+            value={ userPhoto }
+            onChange={ ( e ) => setUserPhoto( e.target.value ) }
           />
         </section>
 
@@ -86,8 +84,8 @@ function SignupForm ({onLogin, showLogin, setShowLogin}) {
             type="password"
             id="signup-password"
             autoComplete="off"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={ password }
+            onChange={ ( e ) => setPassword( e.target.value ) }
           />
         </section>
 
@@ -98,8 +96,8 @@ function SignupForm ({onLogin, showLogin, setShowLogin}) {
             type="password"
             id="signup-password-confirmation"
             autoComplete="off"
-            value={passwordConfirmation}
-            onChange={(e) => setPasswordConfirmation(e.target.value)}
+            value={ passwordConfirmation }
+            onChange={ ( e ) => setPasswordConfirmation( e.target.value ) }
           />
         </section>
 
@@ -108,12 +106,12 @@ function SignupForm ({onLogin, showLogin, setShowLogin}) {
         </section>
 
         <section className="signup-errors">
-          {errors.map( err => ( <div key={err}> {err} </div> ))}
+          { errors.map( err => ( <div key={ err }> { err } </div> ) ) }
         </section>
-      
+
       </form>
     </main>
   )
 }
 
-export default SignupForm;
+export default SignupForm

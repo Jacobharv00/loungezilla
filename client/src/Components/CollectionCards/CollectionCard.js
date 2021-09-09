@@ -1,10 +1,10 @@
-import React from "react";
-import "./CollectionCard.css";
-import ImageButton from "react-image-button";
+import React from "react"
+import "./CollectionCard.css"
+// import ImageButton from "react-image-button";
 
-// prettier-ignore
-function CollectionCard({ title, movieCollection }) {
-  const displayMovies = movieCollection.map((movie) => {
+
+function CollectionCard ( { title, movieCollection } ) {
+  const displayMovies = movieCollection.map( ( movie ) => {
     return (
       // <ImageButton
       //   key={movie.id}
@@ -19,7 +19,7 @@ function CollectionCard({ title, movieCollection }) {
       //       cursor: "pointer",
       //       border: "none",
       //       padding: "2px",
-            
+
       //     }}
       //   >
       //     Remove
@@ -28,19 +28,19 @@ function CollectionCard({ title, movieCollection }) {
 
       <img
         className="collection-img"
-        key={movie.id}
-        src={movie?.movie_db_image}
+        key={ movie.id }
+        src={ movie?.movie_db_image }
         alt="movie"
-      /> 
-    );
-  });
+      />
+    )
+  } )
 
   return (
     <div className="collection-row">
-      <h1 className="collection-title">{title}</h1>
-      {displayMovies}
+      <h1 className="collection-title">{ title }</h1>
+      { displayMovies }
     </div>
-  );
+  )
 }
 
-export default CollectionCard;
+export default CollectionCard

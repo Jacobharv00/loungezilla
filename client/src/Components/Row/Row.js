@@ -5,7 +5,7 @@ import AddCommentForm from "../CommentForm/AddCommentForm";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
-// prettier-ignore
+
 function Row ( { title, fetchUrl, isLargeRow, user, id} ) {
   const [ movies, setMovies ] = useState( [] )
   const [ addComment, setAddComment ] = useState( false )
@@ -51,7 +51,7 @@ function Row ( { title, fetchUrl, isLargeRow, user, id} ) {
     })
   }
 
-// prettier-ignore
+
   return (
     <div className="row">
       <h2 id={id}>{title}</h2>
