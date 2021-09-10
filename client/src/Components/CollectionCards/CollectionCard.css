@@ -2,10 +2,14 @@
   margin: auto;
 }
 
+.container {
+  display:flex;
+}
+
 .collection-title {
   color: #f5f7dc;
-  padding: 5px;
-  margin-bottom: 50px;
+  padding: 7px;
+  margin-bottom: 65px;
   font-size: 3rem;
 }
 
@@ -23,7 +27,7 @@
   transform: scale(1.08);
 }
 
-.row_posterLarge {
+.row_posterL {
   transition: transform 450ms;
   margin-left:15px;
   max-height: 300px;
@@ -34,4 +38,10 @@
 
 .row_posterLarge:hover {
   transform: scale(1.09);
+}
+
+.small-img-delete-btn {
+  position: absolute;
+  margin-top: -4vh;
+  margin-left: -17vw;
 }

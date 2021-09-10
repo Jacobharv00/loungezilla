@@ -7,6 +7,5 @@ class CollectionsController < ApplicationController
     render json: collections
   end
 
-  # find a user by the sessions user_id: .collections for that specific user
 
 end

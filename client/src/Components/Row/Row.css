@@ -26,6 +26,10 @@
   cursor: pointer;
 }
 
+.row_poster.undefined {
+  margin-left: -3vw;
+}
+
 .row_poster:hover {
   transform: scale(1.08);
 }
@@ -34,6 +38,7 @@
   max-height: 300px;
   border-radius: 4px;
   cursor: pointer;
+  margin-left: -3vw;
 }
 
 .row_posterLarge:hover {
@@ -44,19 +49,14 @@
   max-height: 50px;
 }
 
-.button-container {
-  contain: size;
-  /* margin-right: -70px; */
-  transform: rotateZ(360deg)
-}
-
 .add-to-collections-btn {
-  max-height: 45px;
+  max-height: 3vh;
+  margin-top: -15px;
   background-color: #0f0326;
   color: #f5f7dc;
   border: none;
   cursor: pointer;
-  /* font-size: 1rem; */
+  transform: rotateZ(350deg);
   border-radius: 5px;
   padding: 2px;
 }

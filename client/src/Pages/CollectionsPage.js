@@ -18,7 +18,7 @@ function CollectionsPage () {
       <CollectionCard
         key={ collection.id }
         title={ collection.title }
-        movieCollection={ collection.movie_collections }
+        movieCollections={ collection.movie_collections }
       />
     )
   } )

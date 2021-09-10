@@ -1,9 +1,11 @@
 .comment-form-div {
-  height: 32vh;
+  height: 33vh;
+  margin-top: 3vh;
   width: 60vw;
   background-color: #0f0326;
   margin-left: 22vw;
   border-radius: 7px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
 .comment-input {
@@ -13,8 +15,9 @@
   border: none;
   border-bottom: 2px solid #e65f5c;
   width: 60%;
-  margin-left: 6vw;
+  margin-left: 11vw;
   padding-top: 12vh;
+  margin-top: 10px;
 }
 
 .add-comment-btn {
@@ -37,4 +40,12 @@
   border-radius: 7px;
   padding: 5px;
   font-size: 1.2rem;
+  margin-left:20px;
+  margin-top:10px;
+}
+
+.close-form-btn {
+  float: right;
+  margin-top:-14vh;
+  margin-right: 2vw;
 }

@@ -71,7 +71,7 @@ function Row ( { title, fetchUrl, isLargeRow, user, id } ) {
           </React.Fragment>
         ) ) }
       </div>
-      { addComment ? <AddCommentForm movies={ movies } user={ user } movieId={ movieId } /> : null }
+      { addComment ? <AddCommentForm movies={ movies } user={ user } movieId={ movieId } setAddComment={ setAddComment } addComment={ addComment } /> : null }
     </div>
   )
 }

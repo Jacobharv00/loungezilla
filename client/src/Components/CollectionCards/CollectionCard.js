@@ -1,31 +1,51 @@
-import React from "react"
+import React, { useState } from "react"
 import "./CollectionCard.css"
 // import ImageButton from "react-image-button";
 
 
-function CollectionCard ( { title, movieCollection } ) {
+function CollectionCard ( { title, movieCollections } ) {
+  const [ movieDbId, setMovieDbId ] = useState( null )
 
-
-  const displayMovies = movieCollection.map( ( movie ) => {
+  const displayMovies = movieCollections.map( ( movie ) => {
     if ( title === 'Originals' ) {
       return (
-        <img
-          className="row_posterLarge"
-          key={ movie.id }
-          src={ movie?.movie_db_image }
-          alt="movie"
-        />
+        <>
+          <img
+            className="row_posterL"
+            key={ movie.id }
+            id={ movie.movie_db_id }
+            src={ movie?.movie_db_image }
+            alt="movie"
+          />
+          <button className="big-img-delete-btn">Delete</button>
+        </>
       )
     }
     return (
-      <img
-        className="collection-img"
-        key={ movie.id }
-        src={ movie?.movie_db_image }
-        alt="movie"
-      />
+      <>
+        <img
+          className="collection-img"
+          key={ movie.id }
+          id={ movie.movie_db_id }
+          src={ movie?.movie_db_image }
+          alt="movie"
+        />
+        <button onClick={ ( e ) => {
+          setMovieDbId( e.target.previousElementSibling.id )
+          deleteMovie( movieDbId )
+        } } className="small-img-delete-btn">Delete</button>
+      </>
     )
   } )
+
+  // console.log( movieDbId )
+
+  const deleteMovie = () => {
+    fetch( `/movie_collections/${movieDbId}`, {
+      method: 'DELETE'
+    } )
+  }
+
 
   return (
     <div className="collection-row">
@@ -35,25 +55,6 @@ function CollectionCard ( { title, movieCollection } ) {
   )
 }
 
+
 export default CollectionCard
 
-
-     // <ImageButton
-        //   key={movie.id}
-        //   zoomOnHover={0}
-        //   buttonPosition="bottom"
-        //   img={<img className="collection-img" src={movie?.movie_db_image} alt="movie" />} >
-        //   <button
-        //     onClick={() => console.log("HELLO!!!")}
-        //     style={{
-        //       backgroundColor: "#f5f7dc",
-        //       color: "#0f0326",
-        //       cursor: "pointer",
-        //       border: "none",
-        //       padding: "2px",
-
-        //     }}
-        //   >
-        //     Remove
-        //   </button>
-        // </ImageButton>

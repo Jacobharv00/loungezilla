@@ -3,7 +3,7 @@ import "./CommentForm.css"
 import CommentsPage from "../../Pages/CommentsPage"
 
 
-function AddCommentForm ( { user, movieId } ) {
+function AddCommentForm ( { user, movieId, setAddComment, addComment } ) {
   const [ comment, setComment ] = useState( "" )
   const [ errors, setErrors ] = useState( [] )
   const [ commentResults, setCommentResults ] = useState( [] )
@@ -41,6 +41,7 @@ function AddCommentForm ( { user, movieId } ) {
           Submit
         </button>
       </form>
+      <button className="close-form-btn" onClick={ () => setAddComment( !addComment ) }>X</button>
       <div>
         { errors.map( ( err ) => (
           <div className="comment-errors" key={ err }>
@@ -48,7 +49,7 @@ function AddCommentForm ( { user, movieId } ) {
           </div>
         ) ) }
       </div>
-      <button className="show-comments-btn" onClick={ () => setShowComments( !showComments ) }>Show Comments</button>
+      <button className="show-comments-btn" onClick={ () => setShowComments( !showComments ) }>{ showComments ? 'Hide Comments' : 'Show Comments' }</button>
       { showComments ? <CommentsPage movieId={ movieId } /> : null }
     </div>
   )
