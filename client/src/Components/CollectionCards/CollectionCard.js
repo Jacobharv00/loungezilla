@@ -6,6 +6,7 @@ import "./CollectionCard.css"
 function CollectionCard ( { title, movieCollections } ) {
   const [ movieDbId, setMovieDbId ] = useState( null )
 
+
   const displayMovies = movieCollections.map( ( movie ) => {
     if ( title === 'Originals' ) {
       return (
@@ -17,7 +18,10 @@ function CollectionCard ( { title, movieCollections } ) {
             src={ movie?.movie_db_image }
             alt="movie"
           />
-          <button className="big-img-delete-btn">Delete</button>
+          <button onClick={ ( e ) => {
+            setMovieDbId( e.target.previousElementSibling.id )
+            deleteMovie( movieDbId )
+          } } className="large-img-delete-btn">Delete</button>
         </>
       )
     }
@@ -37,6 +41,7 @@ function CollectionCard ( { title, movieCollections } ) {
       </>
     )
   } )
+
 
   // console.log( movieDbId )
 
