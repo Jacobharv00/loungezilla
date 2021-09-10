@@ -4,28 +4,20 @@ import "./CollectionCard.css"
 
 
 function CollectionCard ( { title, movieCollection } ) {
+
+
   const displayMovies = movieCollection.map( ( movie ) => {
+    if ( title === 'Originals' ) {
+      return (
+        <img
+          className="row_posterLarge"
+          key={ movie.id }
+          src={ movie?.movie_db_image }
+          alt="movie"
+        />
+      )
+    }
     return (
-      // <ImageButton
-      //   key={movie.id}
-      //   zoomOnHover={0}
-      //   buttonPosition="bottom"
-      //   img={<img className="collection-img" src={movie?.movie_db_image} alt="movie" />} >
-      //   <button
-      //     onClick={() => console.log("HELLO!!!")}
-      //     style={{
-      //       backgroundColor: "#f5f7dc",
-      //       color: "#0f0326",
-      //       cursor: "pointer",
-      //       border: "none",
-      //       padding: "2px",
-
-      //     }}
-      //   >
-      //     Remove
-      //   </button>
-      // </ImageButton>
-
       <img
         className="collection-img"
         key={ movie.id }
@@ -44,3 +36,24 @@ function CollectionCard ( { title, movieCollection } ) {
 }
 
 export default CollectionCard
+
+
+     // <ImageButton
+        //   key={movie.id}
+        //   zoomOnHover={0}
+        //   buttonPosition="bottom"
+        //   img={<img className="collection-img" src={movie?.movie_db_image} alt="movie" />} >
+        //   <button
+        //     onClick={() => console.log("HELLO!!!")}
+        //     style={{
+        //       backgroundColor: "#f5f7dc",
+        //       color: "#0f0326",
+        //       cursor: "pointer",
+        //       border: "none",
+        //       padding: "2px",
+
+        //     }}
+        //   >
+        //     Remove
+        //   </button>
+        // </ImageButton>

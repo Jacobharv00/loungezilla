@@ -15,12 +15,22 @@ function LoginPage ( { onLogin } ) {
 
     <div className="login-page">
 
-      <header className='header'>
-        LOUNGEZILLA
-        <h5>browse movies | my collections</h5>
-        <button className="signup-button" onClick={ () => setShowSignup( !showSignup ) }>Signup</button>
-        <button className="login-button" onClick={ () => setShowLogin( !showLogin ) }>Login</button>
-      </header>
+      <ul className='ul-container'>
+        <li className="li-item">
+          <h1 className="name">LOUNGEZILLA</h1>
+          <p className="p-text">Browse Movies | My Collections</p>
+        </li>
+
+        {/* <li className="li-item">
+      
+        </li> */}
+        <li className="li-item">
+          <button className="signup-button" onClick={ () => setShowSignup( !showSignup ) }>Signup</button>
+        </li>
+        <li className="li-item">
+          <button className="login-button" onClick={ () => setShowLogin( !showLogin ) }>Login</button>
+        </li>
+      </ul>
 
       { showSignup ? <SignupForm onLogin={ onLogin } /> : showLogin ? <LoginForm onLogin={ onLogin } /> : null }
 

@@ -32,6 +32,9 @@ module Loungezilla
     # https://owasp.org/www-community/SameSite
     config.action_dispatch.cookies_same_site_protection = :strict
 
+    # Does this Work??????? I Do not think so!
+    # config.active_record.belongs_to_required_by_default = false
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

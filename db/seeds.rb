@@ -31,11 +31,11 @@ jacobsCollection4 = UserCollection.create(user_id: gracie.id, collection_id: act
 puts "Done Seeding A User Collection!"
 
 
-# puts "Seeding MovieCollections..."
-# movieCollection1 = MovieCollection.create(movie_db_id: 1, collection_id: collection1.id, movie_db_image: 'Test 1')
-# MovieCollection2 = MovieCollection.create(movie_db_id: 2, collection_id: collection2.id, movie_db_image: 'Test 2')
+puts "Seeding MovieCollections..."
+movieCollection1 = MovieCollection.create(movie_db_id: 1, collection_id: originals.id, movie_db_image: 'Test 1', user_id: jacob.id)
+MovieCollection2 = MovieCollection.create(movie_db_id: 2, collection_id: romance.id, movie_db_image: 'Test 2', user_id: gracie.id)
 
-# puts "Done Seeding MovieCollections!!!"
+puts "Done Seeding MovieCollections!!!"
 
 
 puts "Seeding Comments"

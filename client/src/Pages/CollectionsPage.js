@@ -1,31 +1,31 @@
-import React, { useState, useEffect } from "react";
-import CollectionCard from "../Components/CollectionCards/CollectionCard";
-import "./CollectionsPage.css";
+import React, { useState, useEffect } from "react"
+import CollectionCard from "../Components/CollectionCards/CollectionCard"
+import "./CollectionsPage.css"
 
-function CollectionsPage() {
-  const [collections, setCollections] = useState([]);
+function CollectionsPage () {
+  const [ collections, setCollections ] = useState( [] )
 
-  useEffect(() => {
-    fetch("/collections")
-      .then((resp) => resp.json())
-      .then((data) => setCollections(data));
-  }, []);
+  useEffect( () => {
+    fetch( "/collections" )
+      .then( ( resp ) => resp.json() )
+      .then( ( data ) => setCollections( data ) )
+  }, [] )
 
   // console.log("Collections Page", collections);
 
-  const displayCollections = collections.map((collection) => {
+  const displayCollections = collections.map( ( collection ) => {
     return (
       <CollectionCard
-        key={collection.id}
-        title={collection.title}
-        movieCollection={collection.movie_collections}
+        key={ collection.id }
+        title={ collection.title }
+        movieCollection={ collection.movie_collections }
       />
-    );
-  });
+    )
+  } )
 
   return (
-    <div className="display-collections-container">{displayCollections}</div>
-  );
+    <div className="display-collections-container">{ displayCollections }</div>
+  )
 }
 
-export default CollectionsPage;
+export default CollectionsPage

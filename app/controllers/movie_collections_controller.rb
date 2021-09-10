@@ -8,10 +8,7 @@ class MovieCollectionsController < ApplicationController
   end
 
   def create
-    # movie_collection = MovieCollection.new(movie_collection_params).where(user_id: session.user_id)
     movie_collection = MovieCollection.create!(movie_collection_params)
-    # movie_collection.user_id = session.user_id
-    # movie_collection.save!
     render json: movie_collection, status: :created
   end
 
@@ -24,7 +21,7 @@ class MovieCollectionsController < ApplicationController
   private
 
   def movie_collection_params
-    params.permit(:movie_db_id, :collection_id, :movie_db_image)
+    params.permit(:movie_db_id, :collection_id, :movie_db_image, :user_id)
   end
 
   

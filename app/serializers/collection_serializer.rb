@@ -4,4 +4,5 @@ class CollectionSerializer < ActiveModel::Serializer
   # has_many :users
 end
 
-# create custom method to access current session id??
+# create custom method
+# 

@@ -17,9 +17,6 @@ function Navbar ( { user, setUser } ) {
     } )
   }
 
-
-
-
   return (
     <nav className="nav-bar">
       <h1 className="app-name">LOUNGEZILLA</h1>
@@ -31,22 +28,8 @@ function Navbar ( { user, setUser } ) {
           <NavLink className="nav-link-collections" to="/CollectionsPage">Collections</NavLink>
         </li>
         <li className="nav-li">
-          {/* {showLogoutBtn ? <button className="logout-btn" onClick={handleLogoutClick}>Log Out</button> : null} */ }
-        </li>
-        <li className="nav-li">
-          {/* <Avatar
-            onClick={() => setShowLogoutBtn(!showLogoutBtn)}
-            round='5px'
-            size={70}
-            className="avatar-photo-nav"
-            name={user.name}
-            color="#e65f5c"
-            fgColor="#f5f7dc"
-          /> */}
-
-          <div class="dropdown">
-
-            <div class="dropbtn">
+          <div className="dropdown">
+            <div className="dropbtn">
               <Avatar
                 onClick={ () => setShowLogoutBtn( !showLogoutBtn ) }
                 round="5px"
@@ -56,23 +39,13 @@ function Navbar ( { user, setUser } ) {
                 color="#e65f5c"
                 fgColor="#f5f7dc"
               />
-
             </div>
-            <div class="dropdown-content">
+            <div className="dropdown-content">
               <button className="logout-btn" onClick={ handleLogoutClick }>
                 Log Out
               </button>
-
             </div>
-          </div>;
-
-
-
-
-
-
-
-
+          </div>
         </li>
       </ul>
     </nav>

@@ -6,6 +6,7 @@
   color: #f5f7dc;
   padding: 5px;
   margin-bottom: 50px;
+  font-size: 3rem;
 }
 
 .collection-img {
@@ -20,4 +21,17 @@
 
 .collection-img:hover {
   transform: scale(1.08);
+}
+
+.row_posterLarge {
+  transition: transform 450ms;
+  margin-left:15px;
+  max-height: 300px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 6px 10px -2px rgba(99, 50, 50, 0.9);
+}
+
+.row_posterLarge:hover {
+  transform: scale(1.09);
 }

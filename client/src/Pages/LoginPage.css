@@ -4,15 +4,35 @@
   width: auto;
 }
 
-.header {
+
+/* navbar items */
+.ul-container {
+  display: flex;
   padding: 15px;
   color: #f5f7dc;
-  font-size: 3rem;
   background-color: #0f0326;
   width: 100%;
   height: 15vh;
   margin-top: -9px;
   margin-left: -9px;
+}
+
+.li-item {
+  list-style-type: none;
+}
+
+.name {
+  font-size: 4rem;
+  margin-left: 5px;
+  transform: rotate(-7deg);
+
+}
+
+.p-text {
+  padding: 10px;
+  margin-left: 5vw;
+  transform: rotate(-7deg);
+  margin-top: -4vh;
 }
 
 .signup-button {
@@ -21,9 +41,10 @@
   width: 75%;
   cursor: pointer;
   border-radius: 10px;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #f5f7dc;
   background: none;
+  margin-left: 53vw;
 }
 
 .login-button {
@@ -32,15 +53,17 @@
   width: 75%;
   cursor: pointer;
   border-radius: 10px;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #f5f7dc;
   background: none;
+  margin-left: 5vw;
 }
 
+/* movie grid */
 .movie-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  gap: 8px;
   grid-auto-rows: minmax(100px, auto);
 }
 
@@ -50,9 +73,12 @@
   min-width: 275px;
   box-shadow: 0 6px 10px -2px rgba(28, 28, 28, 0.9);
   margin-top: 100px;
-  padding: 20px;
+  padding: 30px;
   border-radius: 35px;
   margin-left: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .movie-img {
@@ -62,11 +88,11 @@
   border-radius: 40px;
   padding-top: 2px;
   box-shadow: 0 25px 100px -3px #e65f5c;
+  justify-items: center;
 }
 
 .movie-title {
   font-size: 1rem;
   color: #f5f7dc;
-  text-align: center;
   font-size: 1.5rem;
 }
