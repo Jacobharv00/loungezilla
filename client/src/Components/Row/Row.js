@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react"
 import axios from "../../axios"
 import "./Row.css"
 import AddCommentForm from "../CommentForm/AddCommentForm"
-// import ImageButton from "react-image-button"
 
 const base_url = "https://image.tmdb.org/t/p/original/"
 
@@ -58,7 +57,7 @@ function Row ( { title, fetchUrl, isLargeRow, user, id } ) {
       <div className="row_posters">
         { movies.map( movie => (
           <React.Fragment key={ movie.id }>
-            <button className="add-to-collections-btn" onClick={ getMovieAttributes }>Add to Collections</button>
+            <button className="add-to-collections-btn" onClick={ getMovieAttributes }>Add To Collections</button>
             <img
               onClick={ handleClick }
               id={ movie.id }

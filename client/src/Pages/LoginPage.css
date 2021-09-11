@@ -38,44 +38,45 @@
 .signup-button {
   border: none;
   height: 35px;
-  width: 75%;
   cursor: pointer;
   border-radius: 10px;
   font-size: 2rem;
   color: #f5f7dc;
   background: none;
-  margin-left: 53vw;
+  margin-left: 74vw;
+  margin-right: -7px;
+  position: relative;
+  margin-top: 60px;
 }
 
 .login-button {
   border: none;
   height: 35px;
-  width: 75%;
   cursor: pointer;
   border-radius: 10px;
   font-size: 2rem;
   color: #f5f7dc;
   background: none;
-  margin-left: 5vw;
+  position: relative;
+  margin-top: 60px;
 }
 
 /* movie grid */
 .movie-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
   grid-auto-rows: minmax(100px, auto);
 }
 
 .movie-background {
   background-color: #0f0326;
   min-height: 350px;
-  min-width: 275px;
+  max-width: 360px;
   box-shadow: 0 6px 10px -2px rgba(28, 28, 28, 0.9);
   margin-top: 100px;
   padding: 30px;
   border-radius: 35px;
-  margin-left: 15px;
+  margin-left: 80px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -84,15 +85,16 @@
 .movie-img {
   max-height: 355px;
   margin-top: 30px;
-  margin-left: 45px;
+  margin-left: 33px;
+  margin-right: 33px;
   border-radius: 40px;
   padding-top: 2px;
   box-shadow: 0 25px 100px -3px #e65f5c;
-  justify-items: center;
 }
 
 .movie-title {
   font-size: 1rem;
   color: #f5f7dc;
   font-size: 1.5rem;
+  position: relative;
 }

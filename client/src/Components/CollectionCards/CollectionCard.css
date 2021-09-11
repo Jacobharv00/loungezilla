@@ -88,3 +88,6 @@
   transform: scale(0.98);
 }
 
+.trash {
+  pointer-events: none;
+}

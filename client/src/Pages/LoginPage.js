@@ -28,7 +28,7 @@ function LoginPage ( { onLogin } ) {
           <button className="signup-button" onClick={ () => setShowSignup( !showSignup ) }>Signup</button>
         </li>
         <li className="li-item">
-          <button className="login-button" onClick={ () => setShowLogin( !showLogin ) }>Login</button>
+          <button className="login-button" onClick={ () => setShowLogin( !showLogin ) }>/  Login</button>
         </li>
       </ul>
 

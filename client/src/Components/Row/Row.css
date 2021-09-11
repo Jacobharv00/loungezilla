@@ -32,7 +32,7 @@
 
 .row_poster:hover {
   transform: scale(1.08);
-  border: 3px solid white;
+  /* border: 3px solid white; */
 }
 
 .row_posterLarge {
@@ -44,7 +44,7 @@
 
 .row_posterLarge:hover {
   transform: scale(1.09);
-  border: 3px solid white;
+  /* border: 3px solid white; */
 }
 
 .comment-btn {
