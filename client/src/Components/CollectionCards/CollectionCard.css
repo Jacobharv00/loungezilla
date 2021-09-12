@@ -14,6 +14,7 @@
 }
 
 .collection-img {
+  cursor: pointer;
   object-fit: contain;
   max-height: 150px;
   transition: transform 450ms;
@@ -25,6 +26,7 @@
 
 .collection-img:hover {
   transform: scale(1.08);
+  
 }
 
 .row_posterL {
@@ -43,7 +45,7 @@
 .small-img-delete-btn {
   position: absolute;
   margin-top: -4.3vh;
-  margin-left: -7vw;
+  margin-left: -6vw;
   background-color: #0f0326;
   color: #f5f7dc;
   border: none;
@@ -67,7 +69,7 @@
 .large-img-delete-btn{
   position: absolute;
   margin-top: -3vh;
-  margin-left: -6vw;
+  margin-left: -5.5vw;
   background-color: #0f0326;
   color: #f5f7dc;
   border: none;
@@ -90,4 +92,11 @@
 
 .trash {
   pointer-events: none;
+}
+
+.click-me {
+  color: aquamarine;
+  font-size: 2rem;
+  display: flex;
+  /* visibility: hidden; */
 }

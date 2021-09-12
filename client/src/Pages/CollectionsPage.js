@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import CollectionCard from "../Components/CollectionCards/CollectionCard"
 import "./CollectionsPage.css"
 
-function CollectionsPage () {
+function CollectionsPage ( { user } ) {
   const [ collections, setCollections ] = useState( [] )
 
   useEffect( () => {
@@ -19,6 +19,7 @@ function CollectionsPage () {
         key={ collection.id }
         title={ collection.title }
         movieCollections={ collection.movie_collections }
+        user={ user }
       />
     )
   } )

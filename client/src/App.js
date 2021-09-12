@@ -32,7 +32,7 @@ function App () {
             <HomePage user={ user } />
           </Route>
           <Route path="/CollectionsPage" exact>
-            <CollectionsPage />
+            <CollectionsPage user={ user } />
           </Route>
         </Switch>
       </div>

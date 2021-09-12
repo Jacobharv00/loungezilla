@@ -2,8 +2,8 @@ import React, { useState } from "react"
 import "./CommentForm.css"
 import CommentsPage from "../../Pages/CommentsPage"
 
-
-function AddCommentForm ( { user, movieId, setAddComment, addComment } ) {
+//movieId
+function AddCommentForm ( { user, id, setAddComment, addComment } ) {
   const [ comment, setComment ] = useState( "" )
   const [ errors, setErrors ] = useState( [] )
   const [ commentResults, setCommentResults ] = useState( [] )
@@ -12,7 +12,8 @@ function AddCommentForm ( { user, movieId, setAddComment, addComment } ) {
   const newComment = {
     user_id: user.id,
     comment: comment,
-    movie_db_id: movieId
+    // movie_db_id: movieId
+    movie_db_id: id
   }
 
   function handleAddComment ( e ) {
@@ -50,7 +51,8 @@ function AddCommentForm ( { user, movieId, setAddComment, addComment } ) {
         ) ) }
       </div>
       <button className="show-comments-btn" onClick={ () => setShowComments( !showComments ) }>{ showComments ? 'Hide Comments' : 'Show Comments' }</button>
-      { showComments ? <CommentsPage movieId={ movieId } /> : null }
+      {/* { showComments ? <CommentsPage movieId={ movieId } /> : null } */ }
+      { showComments ? <CommentsPage id={ id } /> : null }
     </div>
   )
 }

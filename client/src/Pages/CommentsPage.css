@@ -16,6 +16,7 @@
 .styled-ul li::before {
   content: " 🎥  ";
   padding: 10px;
+  
 }
 
 .comment-container::-webkit-scrollbar {
@@ -24,7 +25,8 @@
 
 .styled-li {
   margin-left: -10px;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  color:#f5f7dc;
 }
 
 .comment-container {

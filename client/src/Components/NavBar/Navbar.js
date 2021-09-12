@@ -20,6 +20,7 @@ function Navbar ( { user, setUser } ) {
   return (
     <nav className="nav-bar">
       <h1 className="app-name">LOUNGEZILLA</h1>
+      <img className='dino-guy' src='kawaii-dinosaur.png' alt='dino' />
       <ul className="nav-links">
         <li className="nav-li">
           <NavLink className="nav-link-home" to="/">Home</NavLink>
@@ -40,6 +41,7 @@ function Navbar ( { user, setUser } ) {
                 fgColor="#f5f7dc"
               />
             </div>
+
             <div className="dropdown-content">
               <button className="logout-btn" onClick={ handleLogoutClick }>
                 Log Out

@@ -1,18 +1,24 @@
 import React, { useState, useEffect } from "react"
 import "./CommentsPage.css"
 
-
-function CommentsPage ( { movieId } ) {
+// movieId
+function CommentsPage ( { id } ) {
   const [ allComments, setAllComments ] = useState( [] )
 
   // console.log('COMMENTS PAGE', movieId)
 
 
+  // useEffect( () => {
+  //   fetch( `/comments/${movieId}` )
+  //     .then( resp => resp.json() )
+  //     .then( data => setAllComments( data ) )
+  // }, [ movieId ] )
+
   useEffect( () => {
-    fetch( `/comments/${movieId}` )
+    fetch( `/comments/${id}` )
       .then( resp => resp.json() )
       .then( data => setAllComments( data ) )
-  }, [ movieId ] )
+  }, [ id ] )
 
 
   const displayComments = allComments.map( comment => {

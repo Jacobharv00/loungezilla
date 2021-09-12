@@ -1,31 +1,42 @@
 import React, { useState } from "react"
 import "./CollectionCard.css"
-// import ImageButton from "react-image-button";
 import { FaRegTrashAlt } from 'react-icons/fa'
+import AddCommentForm from '../CommentForm/AddCommentForm'
 
 
-
-function CollectionCard ( { title, movieCollections } ) {
+function CollectionCard ( { title, movieCollections, user } ) {
   const [ movieDbId, setMovieDbId ] = useState( null )
-  // const [ collections, setCollections ] = useState( [] )
+  const [ addComment, setAddComment ] = useState( false )
+  const [ id, setId ] = useState( null )
+
+
+
+  function handleClick ( e ) {
+    setId( e.target.id )
+    setAddComment( !addComment )
+  }
 
 
   const displayMovies = movieCollections.map( ( movie ) => {
     if ( title === 'Originals' ) {
       return (
         <React.Fragment key={ movie.id }>
+
           <img
             className="row_posterL"
             // key={ movie.id }
             id={ movie.movie_db_id }
             src={ movie?.movie_db_image }
-            alt="movie"
+            alt="Movie"
+            onClick={ handleClick }
           />
           <button onClick={ ( e ) => {
             setMovieDbId( e.target.previousElementSibling.id )
             deleteMovie( movieDbId )
           } } className="large-img-delete-btn"><FaRegTrashAlt className="trash" /></button>
+
         </React.Fragment>
+
       )
     }
     return (
@@ -35,7 +46,8 @@ function CollectionCard ( { title, movieCollections } ) {
           // key={ movie.id }
           id={ movie.movie_db_id }
           src={ movie?.movie_db_image }
-          alt="movie"
+          alt="Movie"
+          onClick={ handleClick }
         />
         <button onClick={ ( e ) => {
           setMovieDbId( e.target.previousElementSibling.id )
@@ -50,21 +62,16 @@ function CollectionCard ( { title, movieCollections } ) {
     fetch( `/movie_collections/${movieDbId}`, {
       method: 'DELETE'
     } )
-    // .then( setCollections( collections ) )
   }
 
 
-  // function handleMovieIdAndDelete (e) {
-  //   Promise.resolve()
-  //     .then( () => { setMovieDbId(e.target.previousElementSibling.id) } )
-  //     .then( () => deleteMovie())
-  // }
 
 
   return (
     <div className="collection-row">
       <h1 className="collection-title">{ title }</h1>
       { displayMovies }
+      { addComment ? <AddCommentForm user={ user } id={ id } setAddComment={ setAddComment } addComment={ addComment } /> : null }
     </div>
   )
 }

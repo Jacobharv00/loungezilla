@@ -13,7 +13,7 @@
 .app-name {
   color: #f5f7dc;
   padding: 15px;
-  font-size: 3rem;
+  font-size: 4rem;
   transform: rotate(-6deg);
   margin-left: 35px;
   margin-top:23px;
@@ -85,4 +85,11 @@
 .dropdown:hover .dropdown-content {
   display: block;
   margin-right: 40px;
+}
+
+.dino-guy{
+  margin-left: 2vw;
+  width: 75px;
+  height: 75px;
+  margin-top: 20px;
 }
