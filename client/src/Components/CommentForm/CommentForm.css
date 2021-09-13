@@ -29,8 +29,16 @@
   font-size: 1.2rem;
 }
 
+.add-comment-btn:hover {
+  background-color: #f5f7dc;
+  color: #0f0326;
+}
+
 .comment-errors {
-  color: orange;
+  color: #f5f7dc;
+  font-size: 1.5rem;
+  margin-left: 20vw;
+  margin-top: -5vh;
 }
 
 .show-comments-btn {
@@ -44,8 +52,30 @@
   margin-top:10px;
 }
 
+.show-comments-btn:hover {
+  background-color: #f5f7dc;
+  color: #0f0326;
+}
+
 .close-form-btn {
   float: right;
   margin-top:-14vh;
   margin-right: 2vw;
+  color: #f5f7dc;
+  background-color: #0f0326;
+  cursor: pointer;
+  border-radius: 7px;
+  padding: 5px;
+  font-size: 1.2rem;
+  min-width: 4vw;
 }
+
+.close-form-btn:hover {
+  background-color: #f5f7dc;
+  color: #0f0326;
+}
+
+/* .close-form-btn:active {
+  transform: scale(0.98);
+} */
+

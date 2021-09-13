@@ -20,6 +20,8 @@ function CollectionsPage ( { user } ) {
         title={ collection.title }
         movieCollections={ collection.movie_collections }
         user={ user }
+        setCollections={ setCollections }
+      // collections={ collections }
       />
     )
   } )

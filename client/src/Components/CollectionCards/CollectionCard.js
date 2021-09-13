@@ -4,11 +4,10 @@ import { FaRegTrashAlt } from 'react-icons/fa'
 import AddCommentForm from '../CommentForm/AddCommentForm'
 
 
-function CollectionCard ( { title, movieCollections, user } ) {
-  const [ movieDbId, setMovieDbId ] = useState( null )
+function CollectionCard ( { title, movieCollections, user, setCollections } ) {
+  // const [ movieDbId, setMovieDbId ] = useState( null )
   const [ addComment, setAddComment ] = useState( false )
   const [ id, setId ] = useState( null )
-
 
 
   function handleClick ( e ) {
@@ -16,12 +15,19 @@ function CollectionCard ( { title, movieCollections, user } ) {
     setAddComment( !addComment )
   }
 
+  function deleteMovie ( movieDbId ) {
+    // console.log( 'movieCollections in deleteMovie', movieCollections )
+    let newCollection = movieCollections.filter( oldCollection => oldCollection.id !== movieDbId )
+    fetch( `/movie_collections/${movieDbId}`, {
+      method: 'DELETE'
+    } )
+      .then( setCollections( [ ...movieCollections, newCollection ] ) )
+  }
 
   const displayMovies = movieCollections.map( ( movie ) => {
     if ( title === 'Originals' ) {
       return (
         <React.Fragment key={ movie.id }>
-
           <img
             className="row_posterL"
             // key={ movie.id }
@@ -30,13 +36,12 @@ function CollectionCard ( { title, movieCollections, user } ) {
             alt="Movie"
             onClick={ handleClick }
           />
-          <button onClick={ ( e ) => {
-            setMovieDbId( e.target.previousElementSibling.id )
-            deleteMovie( movieDbId )
+          <button onClick={ () => {
+            // setMovieDbId( e.target.previousElementSibling.id )
+            // deleteMovie( movieDbId )
+            deleteMovie( movie.movie_db_id )
           } } className="large-img-delete-btn"><FaRegTrashAlt className="trash" /></button>
-
         </React.Fragment>
-
       )
     }
     return (
@@ -50,21 +55,12 @@ function CollectionCard ( { title, movieCollections, user } ) {
           onClick={ handleClick }
         />
         <button onClick={ ( e ) => {
-          setMovieDbId( e.target.previousElementSibling.id )
-          deleteMovie( movieDbId )
+          // setMovieDbId( e.target.previousElementSibling.id )
+          deleteMovie( movie.movie_db_id )
         } } className="small-img-delete-btn"><FaRegTrashAlt className="trash" /></button>
       </React.Fragment>
     )
   } )
-
-
-  function deleteMovie () {
-    fetch( `/movie_collections/${movieDbId}`, {
-      method: 'DELETE'
-    } )
-  }
-
-
 
 
   return (

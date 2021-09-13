@@ -13,32 +13,34 @@ function Row ( { title, fetchUrl, isLargeRow, user, id } ) {
   // const [ addComment, setAddComment ] = useState( false )
   // const [ movieId, setMovieId ] = useState( null )
   const [ displayTitle, setDisplayTitle ] = useState( null )
-  const [ trailerUrl, setTrailerUrl ] = useState( "" )
+  const [ trailerUrl, setTrailerUrl ] = useState( '' )
+
 
 
   const opts = {
     height: '390',
     width: '100%',
     playerVars: {
-      //  https://developers.google.com/youtube/player_parameters,
+      //  https://developers.google.com/youtube/player_parameters
       autoplay: 1,
     },
   }
 
-  function handleClick ( movie ) {
+  // first setup was movie as parameter
+  const handleClick = ( e ) => {
     if ( trailerUrl ) {
-      setTrailerUrl( "" )
+      setTrailerUrl( '' )
     } else {
-      movieTrailer( movie?.name || '' )
+      movieTrailer( null, { tmdbId: e.target.id } )
+        //movieTrailer( movie?.name || '' )
         .then( url => {
-          console.log( url )
-          // https://www.youtube.com/watch?v=XtMThy8QKqU
           const urlParams = new URLSearchParams( new URL( url ).search )
-          setTrailerUrl( urlParams.get( "v" ) )
+          setTrailerUrl( urlParams.get( 'v' ) )
         } )
         .catch( error => console.log( error ) )
     }
   }
+
 
   useEffect( () => {
     async function fetchData () {
@@ -71,11 +73,6 @@ function Row ( { title, fetchUrl, isLargeRow, user, id } ) {
     } )
   }
 
-  // function handleClick ( e ) {
-  //   e.stopPropagation()
-  //   setMovieId( e.target.id )
-  //   setAddComment( !addComment )
-  // }
 
   return (
     <div className="row">
@@ -85,9 +82,9 @@ function Row ( { title, fetchUrl, isLargeRow, user, id } ) {
           <React.Fragment key={ movie.id }>
             <button className="add-to-collections-btn" onClick={ getMovieAttributes }>Add To Collections</button>
             <img
-              // onClick={ handleClick }
-              onClick={ () => handleClick( movie ) }
               id={ movie.id }
+              //onClick={ () => handleClick( movie ) }
+              onClick={ handleClick }
               className={ `row_poster ${isLargeRow && "row_posterLarge"}` }
               src={ `${base_url}${isLargeRow ? movie.poster_path : movie.backdrop_path}` }
               alt={ movie.name }
@@ -96,10 +93,8 @@ function Row ( { title, fetchUrl, isLargeRow, user, id } ) {
               onMouseLeave={ () => setDisplayTitle( !displayTitle ) } />
           </React.Fragment>
         ) ) }
-
       </div>
       { trailerUrl && <Youtube videoId={ trailerUrl } opts={ opts } /> }
-      {/* { addComment ? <AddCommentForm movies={ movies } user={ user } movieId={ movieId } setAddComment={ setAddComment } addComment={ addComment } /> : null }  */ }
     </div>
   )
 }

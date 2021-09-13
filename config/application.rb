@@ -31,6 +31,7 @@ module Loungezilla
     # Use SameSite=Strict for all cookies to help protect against CSRF
     # https://owasp.org/www-community/SameSite
     config.action_dispatch.cookies_same_site_protection = :strict
+    
 
     # Does this Work??????? I Do not think so!
     # config.active_record.belongs_to_required_by_default = false

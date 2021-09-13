@@ -20,10 +20,6 @@ function LoginPage ( { onLogin } ) {
           <h1 className="name">LOUNGEZILLA</h1>
           <p className="p-text">Browse Movies | My Collections</p>
         </li>
-
-        {/* <li className="li-item">
-      
-        </li> */}
         <li className="li-item">
           <button className="signup-button" onClick={ () => setShowSignup( !showSignup ) }>Signup</button>
         </li>

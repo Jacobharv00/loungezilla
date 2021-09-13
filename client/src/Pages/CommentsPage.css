@@ -30,7 +30,7 @@
 }
 
 .comment-container {
-  max-height: 155px;
+  max-height: 160px;
   width: 75%;
   overflow-y: auto;
 }
