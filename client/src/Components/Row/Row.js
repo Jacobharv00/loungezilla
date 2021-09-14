@@ -10,10 +10,11 @@ const base_url = "https://image.tmdb.org/t/p/original/"
 
 function Row ( { title, fetchUrl, isLargeRow, user, id } ) {
   const [ movies, setMovies ] = useState( [] )
+  const [ trailerUrl, setTrailerUrl ] = useState( '' )
+
   // const [ addComment, setAddComment ] = useState( false )
   // const [ movieId, setMovieId ] = useState( null )
-  const [ displayTitle, setDisplayTitle ] = useState( null )
-  const [ trailerUrl, setTrailerUrl ] = useState( '' )
+  // const [ displayTitle, setDisplayTitle ] = useState( null )
 
 
 
@@ -88,9 +89,7 @@ function Row ( { title, fetchUrl, isLargeRow, user, id } ) {
               className={ `row_poster ${isLargeRow && "row_posterLarge"}` }
               src={ `${base_url}${isLargeRow ? movie.poster_path : movie.backdrop_path}` }
               alt={ movie.name }
-              title={ movie?.title }
-              onMouseEnter={ () => setDisplayTitle( displayTitle ) }
-              onMouseLeave={ () => setDisplayTitle( !displayTitle ) } />
+              title={ movie?.title } />
           </React.Fragment>
         ) ) }
       </div>
