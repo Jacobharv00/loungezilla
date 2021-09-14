@@ -5,7 +5,6 @@ import AddCommentForm from '../CommentForm/AddCommentForm'
 
 
 function CollectionCard ( { title, movieCollections, user, setCollections, collections, collectionId } ) {
-  // const [ movieDbId, setMovieDbId ] = useState( null )
   const [ addComment, setAddComment ] = useState( false )
   const [ id, setId ] = useState( null )
 
@@ -35,17 +34,12 @@ function CollectionCard ( { title, movieCollections, user, setCollections, colle
         <React.Fragment key={ movie.id }>
           <img
             className="row_posterL"
-            // key={ movie.id }
             id={ movie.movie_db_id }
             src={ movie?.movie_db_image }
             alt="Movie"
             onClick={ handleClick }
           />
-          <button onClick={ () => {
-            // setMovieDbId( e.target.previousElementSibling.id )
-            // deleteMovie( movieDbId )
-            deleteMovie( movie.id )
-          } } className="large-img-delete-btn"><FaRegTrashAlt className="trash" /></button>
+          <button onClick={ () => { deleteMovie( movie.id ) } } className="large-img-delete-btn"><FaRegTrashAlt className="trash" /></button>
         </React.Fragment>
       )
     }
@@ -53,16 +47,12 @@ function CollectionCard ( { title, movieCollections, user, setCollections, colle
       <React.Fragment key={ movie.id }>
         <img
           className="collection-img"
-          // key={ movie.id }
           id={ movie.movie_db_id }
           src={ movie?.movie_db_image }
           alt="Movie"
           onClick={ handleClick }
         />
-        <button onClick={ () => {
-          // setMovieDbId( e.target.previousElementSibling.id )
-          deleteMovie( movie.id )
-        } } className="small-img-delete-btn"><FaRegTrashAlt className="trash" /></button>
+        <button onClick={ () => { deleteMovie( movie.id ) } } className="small-img-delete-btn"><FaRegTrashAlt className="trash" /></button>
       </React.Fragment>
     )
   } )
