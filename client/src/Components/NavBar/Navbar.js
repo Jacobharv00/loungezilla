@@ -20,7 +20,7 @@ function Navbar ( { user, setUser } ) {
 
   return (
     <nav className="nav-bar">
-      <h1 className="app-name">LOUNGEZILLA</h1>
+      <NavLink className='app-name' to='/'>LOUNGEZILLA</NavLink>
       <img className='dino-guy' src='kawaii-dinosaur.png' alt='dino' onClick={ () => setWelcome( !welcome ) } />
       { welcome && <p className='welcome'>HELLO!</p> }
       <ul className="nav-links">
