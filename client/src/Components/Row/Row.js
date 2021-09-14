@@ -26,12 +26,12 @@ function Row ( { title, fetchUrl, isLargeRow, user, id } ) {
     },
   }
 
-  // first setup was movie as parameter
+  // first setup was movie as parameter but does not play any trailers except for few in original's row
   const handleClick = ( e ) => {
     if ( trailerUrl ) {
       setTrailerUrl( '' )
     } else {
-      movieTrailer( null, { tmdbId: e.target.id } )
+      movieTrailer( null, { tmdbId: e.target.id || '' } )
         //movieTrailer( movie?.name || '' )
         .then( url => {
           const urlParams = new URLSearchParams( new URL( url ).search )
@@ -94,7 +94,7 @@ function Row ( { title, fetchUrl, isLargeRow, user, id } ) {
           </React.Fragment>
         ) ) }
       </div>
-      { trailerUrl && <Youtube videoId={ trailerUrl } opts={ opts } /> }
+      { trailerUrl && <Youtube className="youtube" videoId={ trailerUrl } opts={ opts } /> }
     </div>
   )
 }

@@ -19,8 +19,25 @@
   
 }
 
-.comment-container::-webkit-scrollbar {
+/* .comment-container::-webkit-scrollbar {
   display: none;
+} */
+
+.comment-container::-webkit-scrollbar {
+  width: 1.75vw;
+}
+.comment-container::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 7px;
+}
+.comment-container::-webkit-scrollbar-thumb {
+  background-color: #f5f7dc;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  background-image: url("https://lh4.googleusercontent.com/proxy/dC3BZDW9MtOVOy2vmfHR2_MvqWHwkBOfYqGJKjOZ7RMs4oD_hNYJEB7LyIZ-KTKto3H15_0rMXvnPQlij4QzGP9I=w2558-h1335");
+  background-position: center center;
+  background-size: 3.5rem;
+  background-repeat: no-repeat;
 }
 
 .styled-li {
@@ -30,9 +47,11 @@
 }
 
 .comment-container {
-  max-height: 160px;
-  width: 75%;
+  max-height: 180px;
+  width: 90%;
   overflow-y: auto;
+  border-bottom: 1px solid #e65f5c;
+  border-right: 1px solid #e65f5c;
 }
 
 .add-comment-btn {

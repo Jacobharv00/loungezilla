@@ -17,11 +17,12 @@ function CollectionsPage ( { user } ) {
     return (
       <CollectionCard
         key={ collection.id }
+        collectionId={ collection.id }
         title={ collection.title }
         movieCollections={ collection.movie_collections }
         user={ user }
         setCollections={ setCollections }
-      // collections={ collections }
+        collections={ collections }
       />
     )
   } )

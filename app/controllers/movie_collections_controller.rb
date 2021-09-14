@@ -14,7 +14,7 @@ class MovieCollectionsController < ApplicationController
 
   def destroy
     # byebug
-    movie = MovieCollection.find_by(movie_db_id: params[:id])
+    movie = MovieCollection.find_by(id: params[:id])
     movie.destroy
     head :no_content
   end
