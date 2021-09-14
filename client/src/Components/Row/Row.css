@@ -61,6 +61,8 @@
   transform: rotateZ(350deg);
   border-radius: 5px;
   padding: 2px;
+  z-index: 1;
+  margin-left: 3px;
 }
 
 .add-to-collections-btn:hover {
@@ -75,4 +77,9 @@
 
 .youtube {
   border-radius: 5px;
+}
+
+.trailer-error {
+  margin-left: 40vw;
+  font-size: 1.5rem;
 }

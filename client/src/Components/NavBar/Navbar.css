@@ -92,4 +92,8 @@
   width: 75px;
   height: 75px;
   margin-top: 20px;
+  /* filter: invert(5%) sepia(69%) saturate(2500%) hue-rotate(-75deg) brightness(75%) contrast(100%); */
+  /* filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4)); */
+  filter:  hue-rotate(95deg) drop-shadow(5px 0px 0px rgb(0, 166, 255)) invert(100%);
 }
+

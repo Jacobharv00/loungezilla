@@ -10,6 +10,7 @@ import CollectionsPage from "./Pages/CollectionsPage"
 function App () {
   const [ user, setUser ] = useState( null )
 
+
   useEffect( () => {
     fetch( "/me" ).then( ( resp ) => {
       if ( resp.ok ) {
@@ -28,10 +29,10 @@ function App () {
       <br></br>
       <div className="app">
         <Switch>
-          <Route path="/" exact>
+          <Route exact path="/" >
             <HomePage user={ user } />
           </Route>
-          <Route path="/CollectionsPage" exact>
+          <Route exact path="/CollectionsPage" >
             <CollectionsPage user={ user } />
           </Route>
         </Switch>

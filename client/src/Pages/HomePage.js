@@ -30,6 +30,8 @@ function HomePage ( { user } ) {
 
 
 
+  // requests comes from requests.js file
+  // id is coming from hard coded seed file. Would need to make a option to create a collection then add movies to that collection. 
   return (
     <div className="homepage">
       <Banner />

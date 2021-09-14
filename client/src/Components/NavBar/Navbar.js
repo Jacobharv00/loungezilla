@@ -6,6 +6,7 @@ import Avatar from "react-avatar"
 
 function Navbar ( { user, setUser } ) {
   const [ showLogoutBtn, setShowLogoutBtn ] = useState( false )
+  const [ active, setActive ] = useState( false )
 
   function handleLogoutClick () {
     fetch( "/logout", {
@@ -23,14 +24,14 @@ function Navbar ( { user, setUser } ) {
       <img className='dino-guy' src='kawaii-dinosaur.png' alt='dino' />
       <ul className="nav-links">
         <li className="nav-li">
-          <NavLink className="nav-link-home" to="/">Home</NavLink>
+          <NavLink className="nav-link-home" to='/'>Home</NavLink>
         </li>
         <li className="nav-li">
           <NavLink className="nav-link-collections" to="/CollectionsPage">Collections</NavLink>
         </li>
         <li className="nav-li">
           <div className="dropdown">
-            <div className="dropbtn">
+            <div className="drop-btn">
               <Avatar
                 onClick={ () => setShowLogoutBtn( !showLogoutBtn ) }
                 round="5px"

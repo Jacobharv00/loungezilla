@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
 import axios from "../../axios"
 import "./Row.css"
-// import AddCommentForm from "../CommentForm/AddCommentForm"
 import Youtube from 'react-youtube'
 import movieTrailer from 'movie-trailer'
 
@@ -11,11 +10,7 @@ const base_url = "https://image.tmdb.org/t/p/original/"
 function Row ( { title, fetchUrl, isLargeRow, user, id } ) {
   const [ movies, setMovies ] = useState( [] )
   const [ trailerUrl, setTrailerUrl ] = useState( '' )
-
-  // const [ addComment, setAddComment ] = useState( false )
-  // const [ movieId, setMovieId ] = useState( null )
-  // const [ displayTitle, setDisplayTitle ] = useState( null )
-
+  //const [ errors, setErrors ] = useState( false )
 
 
   const opts = {
@@ -42,7 +37,7 @@ function Row ( { title, fetchUrl, isLargeRow, user, id } ) {
     }
   }
 
-
+  // get request for all of the movies from the moviedb.org
   useEffect( () => {
     async function fetchData () {
       const request = await axios.get( fetchUrl )
@@ -51,8 +46,6 @@ function Row ( { title, fetchUrl, isLargeRow, user, id } ) {
     }
     fetchData()
   }, [ fetchUrl ] )
-
-
 
   function getMovieAttributes ( e ) {
     const newMovieCollectionCard = {
@@ -74,7 +67,7 @@ function Row ( { title, fetchUrl, isLargeRow, user, id } ) {
     } )
   }
 
-
+  // what is returned for every single card
   return (
     <div className="row">
       <h2 id={ id }>{ title }</h2>
@@ -93,6 +86,7 @@ function Row ( { title, fetchUrl, isLargeRow, user, id } ) {
           </React.Fragment>
         ) ) }
       </div>
+      {/* { errors ? <div className="trailer-error">Sorry No Trailers For Originals Right Now 😿 </div> : null } */ }
       { trailerUrl && <Youtube className="youtube" videoId={ trailerUrl } opts={ opts } /> }
     </div>
   )
