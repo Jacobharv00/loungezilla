@@ -38,8 +38,8 @@ MovieCollection2 = MovieCollection.create(movie_db_id: 2, collection_id: romance
 puts "Done Seeding MovieCollections!!!"
 
 
-puts "Seeding Comments"
-comment1 = Comment.create(user_id: jacob.id, movie_db_id: 5, comment: 'HELLO!')
+# puts "Seeding Comments"
+# comment1 = Comment.create(user_id: jacob.id, movie_db_id: 5, comment: 'HELLO!')
 
 
 
