@@ -57,11 +57,13 @@ select:focus {
   background-color: #e65f5c;
   color: white;
   align-items: center;
-  margin-left: 60px;
+  margin-left: 105px;
+  position: sticky;
 }
 
 .login-btn:hover {
-  color: #f5f7dc;
+  color: #0f0326;
+  background-color: #f5f7dc;
 }
 
 .login-errors {
