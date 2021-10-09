@@ -14,7 +14,7 @@
 }
 
 .styled-ul li::before {
-  content: " 🎥  ";
+  content: "U+1F3A5";
   padding: 10px;
   
 }
