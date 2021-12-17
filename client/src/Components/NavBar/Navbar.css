@@ -12,11 +12,10 @@
 
 .app-name {
   color: #f5f7dc;
-  padding: 15px;
+  padding: 10px;
   font-size: 4rem;
   transform: rotate(-6deg);
-  margin-left: 35px;
-  margin-top:23px;
+  margin-left: 3vw;
   text-decoration: none;
 }
 

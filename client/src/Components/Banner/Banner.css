@@ -1,7 +1,10 @@
 .banner {
   color: white;
   object-fit: contain;
-  height: 448px;
+  height: 448px; 
+  margin-top: -21px;
+  margin-left: -1vw; 
+  width: 100vw;
   border-radius: 5px;
   box-shadow: 0 0px 0px 0px rgba(99, 50, 50, 0.9);
 }

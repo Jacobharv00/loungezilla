@@ -4,7 +4,6 @@
   width: auto;
 }
 
-
 /* navbar items */
 .ul-container {
   display: flex;
@@ -18,7 +17,21 @@
   box-shadow: inset 5px 5px 25px #f5f7dc;
 }
 
-.li-item {
+.button-container {
+  justify-content: space-between;
+  align-items: center;
+  display:flex;
+}
+
+.li-item1 {
+  padding: 10px;
+  list-style-type: none;
+  justify-content: center;
+  align-items: center;
+  display:flex;
+}
+
+.li-item2 {
   list-style-type: none;
 }
 
@@ -30,10 +43,8 @@
 }
 
 .p-text {
-  padding: 10px;
-  margin-left: 5vw;
+  padding: 25px;
   transform: rotate(-7deg);
-  margin-top: -4vh;
 }
 
 .signup-button {
@@ -44,8 +55,8 @@
   font-size: 2rem;
   color: #f5f7dc;
   background: none;
-  margin-left: 74vw;
-  margin-right: -7px;
+  margin-left: 35vw;
+  display:flex;
   position: relative;
   margin-top: 60px;
 }
@@ -58,7 +69,6 @@
   font-size: 2rem;
   color: #f5f7dc;
   background: none;
-  position: relative;
   margin-top: 60px;
 }
 
